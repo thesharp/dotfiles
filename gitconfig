@@ -1,0 +1,15 @@
+[user]
+	name = Ilya A. Otyutskiy
+	email = sharp@thesharp.ru
+
+[alias]
+	st = status
+	ci = commit -a
+	ls = ls-files
+	co = checkout
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = auto

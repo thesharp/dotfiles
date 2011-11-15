@@ -9,8 +9,10 @@ fi
 
 function git_branch {
 	branch=`git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'`
-	echo $branch
+	if [ $branch ] ; then
+		echo " "$branch
+	fi
 }
 
 export EDITOR=vim
-export PS1='[\u@\h \W$(git_branch)]\$ '
+export PS1='[\u@\h \W\[\e[1;32m\]$(git_branch)\[\e[0m\]]\$ '
