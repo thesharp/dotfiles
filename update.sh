@@ -11,3 +11,4 @@ function dotfile {
 dotfile vimrc
 dotfile gitconfig
 dotfile bashrc
+dotfile Xresources
