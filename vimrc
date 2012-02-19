@@ -15,3 +15,4 @@ menu Encoding.utf-8 :e ++enc=utf8 <CR>
 map <F8> :emenu Encoding.<TAB>
 set hlsearch
 set nobackup
+set title
