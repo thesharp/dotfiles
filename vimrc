@@ -16,3 +16,8 @@ map <F8> :emenu Encoding.<TAB>
 set hlsearch
 set nobackup
 set title
+
+map <F1> :tabnew<CR>
+map <F2> :tabprev<CR>
+map <F3> :tabnext<CR>
+map <F4> :tabclose<CR>

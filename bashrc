@@ -19,6 +19,7 @@ export PS1='[\u@\h \W\[\e[1;32m\]$(git_branch)\[\e[0m\]]\$ '
 
 ### variables
 export EDITOR=vim
+export PAGER=less
 
 ### aliases
 alias mutt="env TERM=xterm-256color mutt"
