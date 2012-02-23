@@ -17,9 +17,17 @@ function git_branch {
 
 export PS1='[\u@\h \W\[\e[1;32m\]$(git_branch)\[\e[0m\]]\$ '
 
+### fix agent inside screen
+function fixagent {
+	export SSH_AUTH_SOCK=`find /tmp/ssh* -type s -user sharp -name 'agent.*' 2> /dev/null`
+}
+
 ### variables
 export EDITOR=vim
 export PAGER=less
 
 ### aliases
 alias mutt="env TERM=xterm-256color mutt"
+
+### autostart
+fixagent
