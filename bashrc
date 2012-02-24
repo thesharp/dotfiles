@@ -30,4 +30,4 @@ export PAGER=less
 alias mutt="env TERM=xterm-256color mutt"
 
 ### autostart
-fixagent
+#fixagent
