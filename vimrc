@@ -22,4 +22,5 @@ map <F2> :tabprev<CR>
 map <F3> :tabnext<CR>
 map <F4> :tabclose<CR>
 
-au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 tw=80
+au FileType python match Error /\%>80v/ 
