@@ -21,6 +21,8 @@ dotfile vimrc
 dotfile gitconfig
 dotfile bashrc
 dotfile Xresources
+dotfile muttrc
 
 dotdir vim
 dotdir mplayer
+dotdir mutt
