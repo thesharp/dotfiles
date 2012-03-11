@@ -1,6 +1,6 @@
 set nocompatible
 set backspace=indent,eol,start
-set nomodeline
+set modeline
 syntax on
 set ruler rulerformat=%40(%<%f\ %m%=%r\ %l\ %c\ %p%%%)
 set background=light
@@ -21,3 +21,5 @@ map <F1> :tabnew<CR>
 map <F2> :tabprev<CR>
 map <F3> :tabnext<CR>
 map <F4> :tabclose<CR>
+
+au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
