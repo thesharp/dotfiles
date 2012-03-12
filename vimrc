@@ -31,3 +31,6 @@ let g:pydoc_open_cmd = 'tabnew'
 
 map <buffer> <S-e> :w<CR>:!clear && /usr/bin/env python % <CR>
 map <buffer> <S-p> :w<CR>:!clear && pep8 % <CR>
+
+let python_highlight_all = 1
+" let python_slow_sync = 1
