@@ -24,6 +24,7 @@ map <F4> :tabclose<CR>
 
 au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 tw=80
 au FileType python match Error /\%>80v/ 
+au FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
 map <F5> :set nonumber!<CR>:set foldcolumn=0<CR>
 
@@ -33,4 +34,5 @@ map <buffer> <S-e> :w<CR>:!clear && /usr/bin/env python % <CR>
 map <buffer> <S-p> :w<CR>:!clear && pep8 % <CR>
 
 let python_highlight_all = 1
+let python_highlight_space_errors = 0
 " let python_slow_sync = 1
