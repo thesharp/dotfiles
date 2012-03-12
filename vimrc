@@ -24,3 +24,9 @@ map <F4> :tabclose<CR>
 
 au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 tw=80
 au FileType python match Error /\%>80v/ 
+
+map <F5> :set nonumber!<CR>:set foldcolumn=0<CR>
+
+let g:pydoc_open_cmd = 'tabnew'
+
+map <buffer> <S-e> :w<CR>:!clear && /usr/bin/env python % <CR>
