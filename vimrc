@@ -31,7 +31,7 @@ map <F5> :set nonumber!<CR>:set foldcolumn=0<CR>
 let g:pydoc_open_cmd = 'tabnew'
 
 map <buffer> <S-e> :w<CR>:!clear && /usr/bin/env python % <CR>
-map <buffer> <S-p> :w<CR>:!clear && pep8 % <CR>
+map <buffer> <S-p> :w<CR>:!clear && pep8 -r --show-source --show-pep8 % <CR>
 
 let python_highlight_all = 1
 let python_highlight_space_errors = 0
