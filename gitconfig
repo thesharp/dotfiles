@@ -13,3 +13,5 @@
 	status = auto
 	branch = auto
 	ui = auto
+[achievement]
+	upload = true

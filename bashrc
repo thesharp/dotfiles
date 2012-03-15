@@ -26,6 +26,10 @@ function fixagent {
 export EDITOR=vim
 export PAGER=less
 
+## git achievements
+export PATH="$PATH:~/dotfiles/git-achievements"
+alias git="git-achievements"
+
 ### aliases
 alias mutt="env TERM=xterm-256color mutt"
 
