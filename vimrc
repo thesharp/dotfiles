@@ -36,3 +36,5 @@ map <buffer> <S-p> :w<CR>:!clear && pep8 -r --show-source --show-pep8 % <CR>
 let python_highlight_all = 1
 let python_highlight_space_errors = 0
 " let python_slow_sync = 1
+
+au FileType html setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
