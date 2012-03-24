@@ -38,3 +38,8 @@ let python_highlight_space_errors = 0
 " let python_slow_sync = 1
 
 au FileType html setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
+
+" gvim settings
+if has("gui_running")
+    colorscheme desert
+endif
