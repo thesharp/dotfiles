@@ -30,8 +30,9 @@ map <F5> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 let g:pydoc_open_cmd = 'tabnew'
 
-map <buffer> <S-e> :w<CR>:!clear && /usr/bin/env python % <CR>
-map <buffer> <S-p> :w<CR>:!clear && pep8 -r --show-source --show-pep8 % <CR>
+menu Python.Run :w<CR>:!clear && /usr/bin/env python % <CR>
+menu Python.PEP-8 :w<CR>:!clear && pep8 -r --show-source --show-pep8 % <CR>
+map <F9> :emenu Python.<TAB>
 
 let python_highlight_all = 1
 let python_highlight_space_errors = 0
@@ -42,4 +43,8 @@ au FileType html setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 " gvim settings
 if has("gui_running")
     colorscheme desert
+"    autocmd VimEnter * NERDTree
 endif
+
+" NERDtree
+let g:NERDTreeWinPos = "right"
