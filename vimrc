@@ -32,6 +32,7 @@ let g:pydoc_open_cmd = 'tabnew'
 
 menu Python.Run :w<CR>:!clear && /usr/bin/env python % <CR>
 menu Python.PEP-8 :w<CR>:!clear && pep8 -r --show-source --show-pep8 % <CR>
+menu Python.pdb iimport pdb; pdb.set_trace()<ESC>
 map <F9> :emenu Python.<TAB>
 
 let python_highlight_all = 1
@@ -43,6 +44,7 @@ au FileType html setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 " gvim settings
 if has("gui_running")
     colorscheme desert
+    set guifont=Terminus
 "    autocmd VimEnter * NERDTree
 endif
 
