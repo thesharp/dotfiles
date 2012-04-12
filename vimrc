@@ -39,7 +39,12 @@ let python_highlight_all = 1
 let python_highlight_space_errors = 0
 " let python_slow_sync = 1
 
+" html settings
 au FileType html setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
+
+" markdown settings
+autocmd BufRead *.md       set ft=markdown
+au FileType markdown setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 " gvim settings
 if has("gui_running")
