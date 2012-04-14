@@ -3,3 +3,4 @@
 stop-xscreensaver=1
 vo=gl
 heartbeat-cmd="xscreensaver-command -deactivate &"
+subcp=utf8
