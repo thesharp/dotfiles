@@ -55,6 +55,7 @@ endif
 
 " NERDtree
 let g:NERDTreeWinPos = "right"
+map <F6> :NERDTreeToggle<CR>
 
 " snippets
 let g:snips_author = 'Ilya A. Otyutskiy'
