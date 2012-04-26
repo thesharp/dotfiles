@@ -55,3 +55,7 @@ endif
 
 " NERDtree
 let g:NERDTreeWinPos = "right"
+
+" snippets
+let g:snips_author = 'Ilya A. Otyutskiy'
+let g:snips_email = 'sharp@thesharp.ru'
