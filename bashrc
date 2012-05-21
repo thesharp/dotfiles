@@ -25,6 +25,7 @@ function fixagent {
 ### variables
 export EDITOR=vim
 export PAGER=less
+export HISTCONTROL=ignoredups
 
 ### aliases
 alias mutt="env TERM=xterm-256color mutt"
