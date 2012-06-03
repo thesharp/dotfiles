@@ -1,5 +1,7 @@
 #!/bin/bash
 
+OS=`uname`
+
 function dotfile {
 	if [ -f $HOME/.$1 ] ; then
 		echo "File exists: $1"
@@ -16,13 +18,21 @@ function dotdir {
 	fi
 }
 
-
+# Common
 dotfile vimrc
 dotfile gitconfig
 dotfile bashrc
-dotfile Xresources
-dotfile muttrc
-
 dotdir vim
-dotdir mplayer
-dotdir mutt
+
+# Darwin-specific
+if [ $OS == "Darwin" ] ; then
+	ln -s $HOME/.bashrc $HOME/.bash_profile
+fi
+
+# Linux-specific
+if [ $OS == "Linux" ] ; then
+	dotfile Xresources
+	dotfile muttrc
+	dotdir mplayer
+	dotdir mutt
+fi
