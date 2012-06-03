@@ -14,8 +14,23 @@ function git_branch {
 		echo " "$branch
 	fi
 }
-export PS1='[\u@\h \W\[\e[1;32m\]$(git_branch)\[\e[0m\]]\$ '
-export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}: ${PWD/#$HOME/~}\007"'
+
+function prompt_command {
+	GIT_STATUS=$(git status --porcelain 2>/dev/null)
+	if [[ -n $GIT_STATUS ]] ; then
+		GIT_DIRTY=1
+	else
+		GIT_DIRTY=0
+	fi
+	if [ $GIT_DIRTY -eq 1 ] ; then
+		export PS1='[\u@\h \W\[\e[1;31m\]$(git_branch)\[\e[0m\]]\$ '
+	else
+		export PS1='[\u@\h \W\[\e[1;32m\]$(git_branch)\[\e[0m\]]\$ '
+	fi
+	echo -ne "\033]0;${USER}@${HOSTNAME%%.*}: ${PWD/#$HOME/~}\007"
+}
+
+export PROMPT_COMMAND=prompt_command
 
 ### fix agent inside screen
 function fixagent {
