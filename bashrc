@@ -15,6 +15,12 @@ function git_branch {
 	fi
 }
 
+function venv {
+	if [ $VIRTUAL_ENV ] ; then
+		echo "(`basename $VIRTUAL_ENV`) "
+	fi
+}
+
 function prompt_command {
 	GIT_STATUS=$(git status --porcelain 2>/dev/null)
 	if [[ -n $GIT_STATUS ]] ; then
@@ -23,9 +29,9 @@ function prompt_command {
 		GIT_DIRTY=0
 	fi
 	if [ $GIT_DIRTY -eq 1 ] ; then
-		export PS1='[\u@\h \W\[\e[1;31m\]$(git_branch)\[\e[0m\]]\$ '
+		export PS1='\e[38;5;61m$(venv)\[\033[0m\][\u@\h \W\[\e[1;31m\]$(git_branch)\[\e[0m\]]\$ '
 	else
-		export PS1='[\u@\h \W\[\e[1;32m\]$(git_branch)\[\e[0m\]]\$ '
+		export PS1='\e[38;5;61m$(venv)\[\033[0m\][\u@\h \W\[\e[1;32m\]$(git_branch)\[\e[0m\]]\$ '
 	fi
 	echo -ne "\033]0;${USER}@${HOSTNAME%%.*}: ${PWD/#$HOME/~}\007"
 }
@@ -41,6 +47,7 @@ function fixagent {
 export EDITOR=vim
 export PAGER=less
 export HISTCONTROL=ignoredups
+export TERM=xterm-256color
 
 ### aliases
 alias mutt="env TERM=xterm-256color mutt"
@@ -51,13 +58,20 @@ if [ `uname` == "Darwin" ] ; then
 	export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
 	export LANG=en_US.UTF-8
 	export LC_ALL=en_US.UTF-8
-	export PATH=$PATH:/usr/local/sbin:$HOME/dotfiles/bin
+	export PATH=$PATH:/usr/local/git/bin:/usr/local/sbin:$HOME/dotfiles/bin
 	if [ -f `brew --prefix`/etc/bash_completion ]; then
 		. `brew --prefix`/etc/bash_completion
 	fi
 	if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
 		. /usr/local/git/contrib/completion/git-completion.bash
 	fi
+
+	# pythonbrew (https://github.com/utahta/pythonbrew) stuff
+	[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+
+	# virtualenvwrapper (http://pypi.python.org/pypi/virtualenvwrapper) stuff
+	export WORKON_HOME=$HOME/.pythonbrew/venvs
+	. virtualenvwrapper.sh
 fi
 
 ### autostart
