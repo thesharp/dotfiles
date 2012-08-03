@@ -7,6 +7,12 @@ fi
 
 # User specific aliases and functions
 
+# colors
+RED=$(tput setaf 196)
+GREEN=$(tput setaf 154)
+BLUE=$(tput setaf 61)
+NORMAL=$(tput sgr0)
+
 ### prompt stuff
 function git_branch {
 	branch=`git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'`
@@ -29,9 +35,9 @@ function prompt_command {
 		GIT_DIRTY=0
 	fi
 	if [ $GIT_DIRTY -eq 1 ] ; then
-		export PS1='\e[38;5;61m$(venv)\[\033[0m\][\u@\h \W\[\e[38;5;196m$(git_branch)\[\e[0m\]]\$ '
+		export PS1='\[${BLUE}\]$(venv)\[${NORMAL}\][\u@\h \W\[${RED}\]$(git_branch)\[${NORMAL}\]]$ '
 	else
-		export PS1='\e[38;5;61m$(venv)\[\033[0m\][\u@\h \W\[\e[38;5;154m$(git_branch)\[\e[0m\]]\$ '
+		export PS1='\[${BLUE}\]$(venv)\[${NORMAL}\][\u@\h \W\[${GREEN}\]$(git_branch)\[${NORMAL}\]]$ '
 	fi
 	echo -ne "\033]0;${USER}@${HOSTNAME%%.*}: ${PWD/#$HOME/~}\007"
 }
