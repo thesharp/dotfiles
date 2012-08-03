@@ -7,7 +7,7 @@ fi
 
 # User specific aliases and functions
 
-# colors
+# colors (numbers are from http://misc.flogisoft.com/_media/bash/colors_format/256_colors_fg.png)
 RED=$(tput setaf 196)
 GREEN=$(tput setaf 154)
 BLUE=$(tput setaf 61)
