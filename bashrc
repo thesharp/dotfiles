@@ -29,9 +29,9 @@ function prompt_command {
 		GIT_DIRTY=0
 	fi
 	if [ $GIT_DIRTY -eq 1 ] ; then
-		export PS1='\e[38;5;61m$(venv)\[\033[0m\][\u@\h \W\[\e[1;31m\]$(git_branch)\[\e[0m\]]\$ '
+		export PS1='\e[38;5;61m$(venv)\[\033[0m\][\u@\h \W\[\e[38;5;196m$(git_branch)\[\e[0m\]]\$ '
 	else
-		export PS1='\e[38;5;61m$(venv)\[\033[0m\][\u@\h \W\[\e[1;32m\]$(git_branch)\[\e[0m\]]\$ '
+		export PS1='\e[38;5;61m$(venv)\[\033[0m\][\u@\h \W\[\e[38;5;154m$(git_branch)\[\e[0m\]]\$ '
 	fi
 	echo -ne "\033]0;${USER}@${HOSTNAME%%.*}: ${PWD/#$HOME/~}\007"
 }
