@@ -65,8 +65,8 @@ if [ `uname` == "Darwin" ] ; then
 	export LANG=en_US.UTF-8
 	export LC_ALL=en_US.UTF-8
 	export PATH=$PATH:/usr/local/git/bin:/usr/local/sbin:$HOME/dotfiles/bin
-	if [ -f `brew --prefix`/etc/bash_completion ]; then
-		. `brew --prefix`/etc/bash_completion
+	if [ -f `brew --prefix`/Cellar/bash-completion/1.3/etc/bash_completion ]; then
+		. `brew --prefix`/Cellar/bash-completion/1.3/etc/bash_completion
 	fi
 	if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
 		. /usr/local/git/contrib/completion/git-completion.bash
