@@ -64,7 +64,7 @@ if [ `uname` == "Darwin" ] ; then
 	export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
 	export LANG=en_US.UTF-8
 	export LC_ALL=en_US.UTF-8
-	export PATH=$PATH:/usr/local/git/bin:/usr/local/sbin:$HOME/dotfiles/bin
+	export PATH=$PATH:/usr/local/share/npm/bin:/usr/local/git/bin:/usr/local/sbin:$HOME/dotfiles/bin
 	if [ -f `brew --prefix`/Cellar/bash-completion/1.3/etc/bash_completion ]; then
 		. `brew --prefix`/Cellar/bash-completion/1.3/etc/bash_completion
 	fi
