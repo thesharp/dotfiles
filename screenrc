@@ -10,7 +10,7 @@
 
 #defflow on # will force screen to process ^S/^Q
 
-deflogin on
+#deflogin on
 #autodetach off
 
 vbell on
@@ -88,8 +88,8 @@ bind ^\
 #make them better
 bind \\ quit
 bind K kill
-bind I login on
-bind O login off
+#bind I login on
+#bind O login off
 bind } history
 
 # This is how one can set a reattach password:
