@@ -44,9 +44,18 @@ function prompt_command {
 
 export PROMPT_COMMAND=prompt_command
 
-### fix agent inside screen
+### screen-specific stuff
 function fixagent {
 	eval export SSH_AUTH_SOCK=`find /tmp/ssh* -type s -user sharp -name 'agent.*' 2> /dev/null`
+}
+
+function screen_reattach {
+	if [ $SSH_TTY ] && [ ! $STY ] ; then
+		screen_check=`screen -ls | wc -l`
+		if [ $screen_check -gt 2 ] ; then
+			screen -dr
+		fi
+	fi
 }
 
 ### variables
@@ -82,3 +91,4 @@ fi
 
 ### autostart
 #fixagent
+screen_reattach
