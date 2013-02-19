@@ -7,6 +7,7 @@ function dotfile {
 		echo "File exists: $1"
 	else
 		ln -s $HOME/dotfiles/$1 $HOME/.$1
+		echo "Linking file $1"
 	fi
 }
 
@@ -15,6 +16,7 @@ function dotdir {
 		echo "Directory exists: $1"
 	else
 		ln -s $HOME/dotfiles/$1 $HOME/.$1
+		echo "Linking directory $1"
 	fi
 }
 
@@ -22,6 +24,7 @@ function dotdir {
 dotfile vimrc
 dotfile gitconfig
 dotfile bashrc
+dotfile screenrc
 dotdir vim
 
 # Darwin-specific
