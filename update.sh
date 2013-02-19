@@ -28,7 +28,7 @@ dotfile screenrc
 dotdir vim
 
 # Darwin-specific
-if [ $OS == "Darwin" ] ; then
+if [ $OS == "Darwin" ] && [ ! -e $HOME/.bash_profile ] ; then
 	ln -s $HOME/.bashrc $HOME/.bash_profile
 fi
 
