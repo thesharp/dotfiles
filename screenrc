@@ -199,7 +199,7 @@ termcapinfo linux C8
 
 # caption always "%3n %t%? @%u%?%? [%h]%?%=%c"
 ## alternative caption, gives window list, LOGNAME and current date:
-caption always "%{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw %=%{mk}@%H %{yk}%D %{ck}%M%{wk} %{ck}%d %{gk}%c"
+# caption always "%{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw %=%{mk}@%H %{yk}%D %{ck}%M%{wk} %{ck}%d %{gk}%c"
 # hardstatus alwaysignore
 # hardstatus alwayslastline "%Lw"
 
@@ -216,3 +216,4 @@ hardstatus string "[screen %n%?: %t%?] %h"
 # idle 30 blanker
 
 term xterm-256color
+caption always '%{= dg} %H %{G}|%=%?%{d}%-w%?%{r}(%{d}%n %t%? {%u} %?%{r})%{d}%?%+w%?%=%{G}| %{B}%l %{G}'
