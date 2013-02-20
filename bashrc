@@ -90,5 +90,5 @@ if [ `uname` == "Darwin" ] ; then
 fi
 
 ### autostart
-fixagent
+#fixagent
 screen_reattach
