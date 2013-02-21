@@ -46,7 +46,7 @@ export PROMPT_COMMAND=prompt_command
 
 ### screen-specific stuff
 function fixagent {
-	eval export SSH_AUTH_SOCK=`find /tmp/ssh* -type s -user sharp -name 'agent.*' 2> /dev/null`
+	eval export SSH_AUTH_SOCK=`find /tmp/ssh* -type s -user $USER -name 'agent.*' 2> /dev/null`
 }
 
 function screen_reattach {
