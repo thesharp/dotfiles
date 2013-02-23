@@ -120,7 +120,7 @@ defscrollback 1000
 # zombie "^["
 
 # enable support for the "alternate screen" capability in all windows
-# altscreen on
+altscreen on
 
 ################
 #
