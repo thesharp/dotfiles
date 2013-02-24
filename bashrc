@@ -70,6 +70,7 @@ alias mutt="env TERM=xterm-256color mutt"
 ### OSX-specific stuff
 if [ `uname` == "Darwin" ] ; then
 	alias ls="ls -G"
+	alias top="top -s1 -o cpu -R -F"
 	export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
 	export LANG=en_US.UTF-8
 	export LC_ALL=en_US.UTF-8
