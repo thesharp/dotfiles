@@ -11,6 +11,7 @@ fi
 RED=$(tput setaf 196)
 GREEN=$(tput setaf 154)
 BLUE=$(tput setaf 61)
+LIGHTBLUE=$(tput setaf 55)
 NORMAL=$(tput sgr0)
 
 ### prompt stuff
@@ -27,6 +28,15 @@ function venv {
 	fi
 }
 
+function py_ver {
+	local default="2.7.3"
+	py_ver=`python -V 2>&1 | awk '{printf $2}'`
+	if [ $py_ver != $default ] ; then
+		echo "($py_ver) "
+	fi
+
+}
+
 function prompt_command {
 	GIT_STATUS=$(git status --porcelain 2>/dev/null)
 	if [[ -n $GIT_STATUS ]] ; then
@@ -35,9 +45,9 @@ function prompt_command {
 		GIT_DIRTY=0
 	fi
 	if [ $GIT_DIRTY -eq 1 ] ; then
-		export PS1='\[${BLUE}\]$(venv)\[${NORMAL}\][\u@\h \W\[${RED}\]$(git_branch)\[${NORMAL}\]]$ '
+		export PS1='\[${BLUE}\]$(venv)\[${NORMAL}\]\[${LIGHTBLUE}\]$(py_ver)\[${NORMAL}\][\u@\h \W\[${RED}\]$(git_branch)\[${NORMAL}\]]$ '
 	else
-		export PS1='\[${BLUE}\]$(venv)\[${NORMAL}\][\u@\h \W\[${GREEN}\]$(git_branch)\[${NORMAL}\]]$ '
+		export PS1='\[${BLUE}\]$(venv)\[${NORMAL}\]\[${LIGHTBLUE}\]$(py_ver)\[${NORMAL}\][\u@\h \W\[${GREEN}\]$(git_branch)\[${NORMAL}\]]$ '
 	fi
 	echo -ne "\033]0;${USER}@${HOSTNAME%%.*}: ${PWD/#$HOME/~}\007"
 }
