@@ -84,12 +84,19 @@ if [ `uname` == "Darwin" ] ; then
 	export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
 	export LANG=en_US.UTF-8
 	export LC_ALL=en_US.UTF-8
-	export PATH=$PATH:/usr/local/share/npm/bin:/usr/local/git/bin:/usr/local/sbin:$HOME/dotfiles/bin
-	if [ -f `brew --prefix`/Cellar/bash-completion/1.3/etc/bash_completion ]; then
-		. `brew --prefix`/Cellar/bash-completion/1.3/etc/bash_completion
+	export PATH=$PATH:/usr/local/share/npm/bin:/usr/local/sbin:$HOME/dotfiles/bin
+
+	## homebrew (https://github.com/mxcl/homebrew) stuff
+	brew=`brew --prefix`
+
+	# bash completion
+	if [ -f $brew/Cellar/bash-completion/1.3/etc/bash_completion ]; then
+		. $brew/Cellar/bash-completion/1.3/etc/bash_completion
 	fi
-	if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
-		. /usr/local/git/contrib/completion/git-completion.bash
+
+	# use homebrew's git if available
+	if [ -x $brew/bin/git ] ; then
+		alias git='${brew}/bin/git'
 	fi
 
 	# pythonbrew (https://github.com/utahta/pythonbrew) stuff
@@ -98,6 +105,7 @@ if [ `uname` == "Darwin" ] ; then
 	# virtualenvwrapper (http://pypi.python.org/pypi/virtualenvwrapper) stuff
 	export WORKON_HOME=$HOME/.pythonbrew/venvs
 	. virtualenvwrapper.sh
+
 fi
 
 ### autostart
