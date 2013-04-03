@@ -84,7 +84,7 @@ if [ `uname` == "Darwin" ] ; then
 	export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
 	export LANG=en_US.UTF-8
 	export LC_ALL=en_US.UTF-8
-	export PATH=$PATH:/usr/local/share/npm/bin:/usr/local/sbin:$HOME/dotfiles/bin
+	export PATH=/usr/local/sbin:/usr/local/bin:$HOME/dotfiles/bin:/usr/local/share/npm/bin:$PATH
 
 	## homebrew (https://github.com/mxcl/homebrew) stuff
 	brew=`brew --prefix`
@@ -92,11 +92,6 @@ if [ `uname` == "Darwin" ] ; then
 	# bash completion
 	if [ -f $brew/Cellar/bash-completion/1.3/etc/bash_completion ]; then
 		. $brew/Cellar/bash-completion/1.3/etc/bash_completion
-	fi
-
-	# use homebrew's git if available
-	if [ -x $brew/bin/git ] ; then
-		alias git='${brew}/bin/git'
 	fi
 
 	# pythonbrew (https://github.com/utahta/pythonbrew) stuff
