@@ -81,6 +81,7 @@ alias mutt="env TERM=xterm-256color mutt"
 if [ `uname` == "Darwin" ] ; then
 	alias ls="ls -G"
 	alias top="top -s1 -o cpu -R -F"
+	alias tor-ssh='ssh -o ProxyCommand="nc -X 4 -x localhost:9150 %h %p"'
 	export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
 	export LANG=en_US.UTF-8
 	export LC_ALL=en_US.UTF-8
