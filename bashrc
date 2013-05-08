@@ -7,7 +7,6 @@ fi
 
 # User specific aliases and functions
 
-
 ### prompt stuff
 function git_branch {
 	branch=`git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'`
@@ -25,7 +24,7 @@ function venv {
 function py_ver {
 	local default="2.7.3"
 	py_ver=`python -V 2>&1 | awk '{printf $2}'`
-	if [ $py_ver != $default ] ; then		
+	if [ $py_ver != $default ] ; then
 		echo "($py_ver) "
 	fi
 
@@ -74,9 +73,6 @@ export EDITOR=vim
 export PAGER=less
 export HISTCONTROL=ignoredups
 export TERM=xterm-256color
-
-### aliases
-alias mutt="env TERM=xterm-256color mutt"
 
 ### OSX-specific stuff
 if [ `uname` == "Darwin" ] ; then
