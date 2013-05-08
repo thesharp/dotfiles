@@ -7,12 +7,6 @@ fi
 
 # User specific aliases and functions
 
-# colors (numbers are from http://misc.flogisoft.com/_media/bash/colors_format/256_colors_fg.png)
-RED=$(tput setaf 196)
-GREEN=$(tput setaf 154)
-BLUE=$(tput setaf 61)
-LIGHTBLUE=$(tput setaf 55)
-NORMAL=$(tput sgr0)
 
 ### prompt stuff
 function git_branch {
@@ -31,13 +25,20 @@ function venv {
 function py_ver {
 	local default="2.7.3"
 	py_ver=`python -V 2>&1 | awk '{printf $2}'`
-	if [ $py_ver != $default ] ; then
+	if [ $py_ver != $default ] ; then		
 		echo "($py_ver) "
 	fi
 
 }
 
 function prompt_command {
+	# colors (numbers are from http://misc.flogisoft.com/_media/bash/colors_format/256_colors_fg.png)
+	RED=$(tput setaf 196)
+	GREEN=$(tput setaf 154)
+	BLUE=$(tput setaf 61)
+	LIGHTBLUE=$(tput setaf 55)
+	NORMAL=$(tput sgr0)
+
 	GIT_STATUS=$(git status --porcelain 2>/dev/null)
 	if [[ -n $GIT_STATUS ]] ; then
 		GIT_DIRTY=1
