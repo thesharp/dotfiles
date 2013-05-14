@@ -5,6 +5,16 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+# Source giobal configuration file
+if [ -f ~/dotfiles/dotfilesrc ] ; then
+	. ~/dotfiles/dotfilesrc
+fi
+
+# Source local configuration file
+if [ -f ~/.dotfilesrc ] ; then
+	. ~/.dotfilesrc
+fi
+
 # User specific aliases and functions
 
 ### prompt stuff
@@ -16,16 +26,23 @@ function git_branch {
 }
 
 function venv {
-	if [ $VIRTUAL_ENV ] ; then
-		echo "(`basename $VIRTUAL_ENV`) "
+	if [ $VENV -eq 1 ] ; then
+		if [ $VIRTUAL_ENV ] ; then
+			echo "(`basename $VIRTUAL_ENV`) "
+		fi
+	else
+		echo ""
 	fi
 }
 
 function py_ver {
-	local default="2.7.3"
-	py_ver=`python -V 2>&1 | awk '{printf $2}'`
-	if [ $py_ver != $default ] ; then
-		echo "($py_ver) "
+	if [ $PY_VER != "0" ]; then
+		py_ver=`python -V 2>&1 | awk '{printf $2}'`
+		if [ $py_ver != $PY_VER ] ; then
+			echo "($py_ver) "
+		fi
+	else
+		echo ""
 	fi
 
 }
@@ -96,8 +113,10 @@ if [ `uname` == "Darwin" ] ; then
 	[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
 
 	# virtualenvwrapper (http://pypi.python.org/pypi/virtualenvwrapper) stuff
-	export WORKON_HOME=$HOME/.pythonbrew/venvs
-	. virtualenvwrapper.sh
+	if [ $VENV -eq 1 ] ; then
+		export WORKON_HOME=$HOME/.pythonbrew/venvs
+		. virtualenvwrapper.sh
+	fi
 
 fi
 
