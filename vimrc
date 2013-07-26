@@ -46,6 +46,9 @@ au FileType html setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 autocmd BufRead *.md       set ft=markdown
 au FileType markdown setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
+" puppet settings
+au FileType puppet setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
 " gvim settings
 if has("gui_running")
     colorscheme desert
