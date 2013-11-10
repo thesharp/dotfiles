@@ -61,5 +61,5 @@ let g:NERDTreeWinPos = "right"
 map <F6> :NERDTreeToggle<CR>
 
 " snippets
-let g:snips_author = 'Ilya A. Otyutskiy'
-let g:snips_email = 'sharp@thesharp.ru'
+let g:snips_author = 'Ilya Otyutskiy'
+let g:snips_email = 'ilya.otyutskiy@icloud.com'
