@@ -13,4 +13,4 @@ VENV=1
 #
 # To not display non-default Python version at all, you need to set this
 # variable to 0.
-PY_VER=2.7.3
+PY_VER=2.7.6

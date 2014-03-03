@@ -109,14 +109,9 @@ if [ `uname` == "Darwin" ] ; then
 		. $brew/Cellar/bash-completion/1.3/etc/bash_completion
 	fi
 
-	# pythonbrew (https://github.com/utahta/pythonbrew) stuff
-	[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
-
-	# virtualenvwrapper (http://pypi.python.org/pypi/virtualenvwrapper) stuff
-	if [ $VENV -eq 1 ] ; then
-		export WORKON_HOME=$HOME/.pythonbrew/venvs
-		. virtualenvwrapper.sh
-	fi
+	# pyenv (https://github.com/yyuu/pyenv) stuff
+        if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+	pyenv virtualenvwrapper
 
 fi
 
