@@ -110,8 +110,7 @@ if [ `uname` == "Darwin" ] ; then
 	fi
 
 	# pyenv (https://github.com/yyuu/pyenv) stuff
-        if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-	pyenv virtualenvwrapper
+        if which pyenv > /dev/null; then eval "$(pyenv init -)" ; pyenv virtualenvwrapper ; fi
 
 fi
 
