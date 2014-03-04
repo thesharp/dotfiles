@@ -1,6 +1,7 @@
 [user]
 	name = Ilya Otyutskiy
 	email = ilya.otyutskiy@icloud.com
+	signingkey = 9442942A
 
 [alias]
 	st = status
