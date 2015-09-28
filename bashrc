@@ -100,7 +100,7 @@ if [ `uname` == "Darwin" ] ; then
 	export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
 	export LANG=en_US.UTF-8
 	export LC_ALL=en_US.UTF-8
-	export PATH=/usr/local/sbin:/usr/local/bin:$HOME/dotfiles/bin:/usr/local/share/npm/bin:$PATH
+	export PATH=/usr/local/sbin:/usr/local/bin:$HOME/dotfiles/bin:/usr/local/share/npm/bin:$HOME/.rvm/bin:$PATH
 
 	## homebrew (https://github.com/mxcl/homebrew) stuff
 	brew=`brew --prefix`
@@ -118,3 +118,7 @@ fi
 ### autostart
 #fixagent
 screen_reattach
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
