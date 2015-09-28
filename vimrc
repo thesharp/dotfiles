@@ -22,7 +22,10 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Note: You don't set neobundle setting in .gvimrc!
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Xuyuanp/nerdtree-git-plugin'
-
+NeoBundle 'bling/vim-airline'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'tpope/vim-fugitive'
 call neobundle#end()
 
 " Required:
@@ -57,10 +60,12 @@ map <F3> :tabnext<CR>
 map <F4> :tabclose<CR>
 
 au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 tw=80
-au FileType python match Error /\%>80v/ 
+au FileType python match Error /\%>80v/
 au FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
 map <F5> :set nonumber!<CR>:set foldcolumn=0<CR>
+set number
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 let g:pydoc_open_cmd = 'tabnew'
 
@@ -101,3 +106,13 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " snippets
 let g:snips_author = 'Ilya Otyutskiy'
 let g:snips_email = 'ilya.otyutskiy@icloud.com'
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

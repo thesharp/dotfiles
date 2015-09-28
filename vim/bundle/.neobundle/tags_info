@@ -1,3 +1,7 @@
 neobundle.vim
 nerdtree
 nerdtree-git-plugin
+syntastic
+vim-airline
+vim-fugitive
+vim-gitgutter
