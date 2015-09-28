@@ -33,6 +33,7 @@ dotfile vimrc
 dotfile gitconfig
 dotfile bashrc
 dotfile screenrc
+dotfile tmux.conf
 dotdir vim
 
 # Darwin-specific
