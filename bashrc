@@ -76,6 +76,15 @@ function fixagent {
 	eval export SSH_AUTH_SOCK=`find /tmp/ssh* -type s -user $USER -name 'agent.*' 2> /dev/null`
 }
 
+fixssh() {
+  for key in SSH_AUTH_SOCK SSH_CONNECTION SSH_CLIENT; do
+    if (tmux show-environment | grep "^${key}" > /dev/null); then
+      value=`tmux show-environment | grep "^${key}" | sed -e "s/^[A-Z_]*=//"`
+      export ${key}="${value}"
+    fi
+  done
+}
+
 function screen_reattach {
 	if [ $SSH_TTY ] && [ ! $STY ] ; then
 		screen_check=`screen -ls | wc -l`
