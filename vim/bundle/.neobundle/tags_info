@@ -1,7 +1,16 @@
+ctrlp.vim
 neobundle.vim
 nerdtree
 nerdtree-git-plugin
+python-syntax
 syntastic
+tcomment_vim
+tlib_vim
+tomorrow-night.vim
+vim-addon-mw-utils
 vim-airline
 vim-fugitive
 vim-gitgutter
+vim-puppet
+vim-snipmate
+vim-snippets

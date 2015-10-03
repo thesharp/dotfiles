@@ -98,7 +98,7 @@ function screen_reattach {
 export EDITOR=vim
 export PAGER=less
 export HISTCONTROL=ignoredups
-export TERM=xterm-256color
+export TERM=screen-256color
 
 ### OSX-specific stuff
 if [ `uname` == "Darwin" ] ; then

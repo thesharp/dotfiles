@@ -1,3 +1,4 @@
+""" NeoBundle
 " Note: Skip initialization for vim-tiny or vim-small.
 if 0 | endif
 
@@ -26,6 +27,15 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle "squarefrog/tomorrow-night.vim"
+NeoBundle "tomtom/tcomment_vim"
+NeoBundle "tomtom/tlib_vim"
+NeoBundle "MarcWeber/vim-addon-mw-utils"
+NeoBundle "garbas/vim-snipmate"
+NeoBundle "honza/vim-snippets"
+NeoBundle "hdima/python-syntax"
+NeoBundle "rodjek/vim-puppet"
+NeoBundle "kien/ctrlp.vim"
 call neobundle#end()
 
 " Required:
@@ -35,12 +45,23 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
-set nocompatible
+""" General stuff
+" set nocompatible
 set backspace=indent,eol,start
 set modeline
 syntax on
 set ruler rulerformat=%40(%<%f\ %m%=%r\ %l\ %c\ %p%%%)
 set background=light
+colorscheme tomorrow-night
+let mapleader=","
+
+" tmux/non-tmux home/end hack
+let tmux=$TMUX
+if tmux != ""
+	set term=screen-256color
+else
+	set term=xterm-256color
+endif
 
 set autoindent
 set wildmenu
@@ -53,61 +74,66 @@ map <F8> :emenu Encoding.<TAB>
 set hlsearch
 set nobackup
 set title
+set showcmd
+set ttyfast
 
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+""" Tab madness
 map <F1> :tabnew<CR>
 map <F2> :tabprev<CR>
 map <F3> :tabnext<CR>
 map <F4> :tabclose<CR>
 
-au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 tw=80
-au FileType python match Error /\%>80v/
-au FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-
+""" Line numbers settings
 map <F5> :set nonumber!<CR>:set foldcolumn=0<CR>
 set number
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
-let g:pydoc_open_cmd = 'tabnew'
+""" Python settings
+" au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 tw=80
+au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+au FileType python set colorcolumn=80
+au FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
-menu Python.Run :w<CR>:!clear && /usr/bin/env python % <CR>
-menu Python.PEP-8 :w<CR>:!clear && pep8 -r --show-source --show-pep8 % <CR>
-menu Python.pdb iimport pdb; pdb.set_trace()<ESC>
-map <F9> :emenu Python.<TAB>
+au FileType python map <Leader>b :w<CR>:!clear && /usr/bin/env python % <CR>
+au FileType python map <Leader>p iimport pdb; pdb.set_trace()<ESC>
 
 let python_highlight_all = 1
 let python_highlight_space_errors = 0
 " let python_slow_sync = 1
 
-" html settings
+""" HTML settings
 au FileType html setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 
-" markdown settings
+""" Markdown settings
 autocmd BufRead *.md       set ft=markdown
 au FileType markdown setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
-" puppet settings
+""" Puppet settings
 au FileType puppet setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
-" gvim settings
+""" GVIM settings
 if has("gui_running")
     colorscheme desert
     set guifont=Terminus
 "    autocmd VimEnter * NERDTree
 endif
 
-" NERDtree
+""" NERDtree
 " let g:NERDTreeWinPos = "right"
-" map <F6> :NERDTreeToggle<CR>
 map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let NERDTreeIgnore = ['\.pyc$']
 
-" snippets
+""" Snippets
 let g:snips_author = 'Ilya Otyutskiy'
 let g:snips_email = 'ilya.otyutskiy@icloud.com'
 
-" Syntastic
+""" Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -115,4 +141,11 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
+
+"" Python
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args = '--ignore="E501"'
+
+"" Puppet
+let g:syntastic_puppet_puppetlint_args = "--no-documentation-check --no-80chars-check --no-autoloader_layout-check --no-variable_scope-check --fail-on-warnings"
