@@ -122,12 +122,10 @@ if [ `uname` == "Darwin" ] ; then
 	# pyenv (https://github.com/yyuu/pyenv) stuff
         if which pyenv > /dev/null; then eval "$(pyenv init -)" ; pyenv virtualenvwrapper ; fi
 
+	# rvm stuff
+	[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 fi
 
 ### autostart
 #fixagent
-screen_reattach
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# screen_reattach
