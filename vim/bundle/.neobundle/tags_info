@@ -1,4 +1,5 @@
 ctrlp.vim
+gist-vim
 neobundle.vim
 nerdtree
 nerdtree-git-plugin
@@ -12,6 +13,9 @@ vim-airline
 vim-better-whitespace
 vim-fugitive
 vim-gitgutter
+vim-markdown
+vim-markdown-preview
 vim-puppet
 vim-snipmate
 vim-snippets
+webapi-vim

@@ -29,14 +29,15 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle "squarefrog/tomorrow-night.vim"
 NeoBundle "tomtom/tcomment_vim"
-NeoBundle "tomtom/tlib_vim"
-NeoBundle "MarcWeber/vim-addon-mw-utils"
-NeoBundle "garbas/vim-snipmate"
+NeoBundle "garbas/vim-snipmate", {"depends": ["MarcWeber/vim-addon-mw-utils", "tomtom/tlib_vim"]}
 NeoBundle "honza/vim-snippets"
 NeoBundle "hdima/python-syntax"
 NeoBundle "rodjek/vim-puppet"
 NeoBundle "kien/ctrlp.vim"
 NeoBundle "ntpeters/vim-better-whitespace"
+NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
+NeoBundle 'tpope/vim-markdown'
+NeoBundle 'JamshedVesuna/vim-markdown-preview'
 call neobundle#end()
 
 " Required:
@@ -109,7 +110,6 @@ let python_highlight_space_errors = 0
 au FileType html setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 
 """ Markdown settings
-autocmd BufRead *.md       set ft=markdown
 au FileType markdown setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 """ Puppet settings
@@ -150,3 +150,6 @@ let g:syntastic_python_flake8_args = '--ignore="E501"'
 
 "" Puppet
 let g:syntastic_puppet_puppetlint_args = "--no-documentation-check --no-80chars-check --no-autoloader_layout-check --no-variable_scope-check --fail-on-warnings"
+
+"" Gist
+let g:gist_post_private = 1
