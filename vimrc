@@ -36,6 +36,7 @@ NeoBundle "honza/vim-snippets"
 NeoBundle "hdima/python-syntax"
 NeoBundle "rodjek/vim-puppet"
 NeoBundle "kien/ctrlp.vim"
+NeoBundle "ntpeters/vim-better-whitespace"
 call neobundle#end()
 
 " Required:

@@ -9,6 +9,7 @@ tlib_vim
 tomorrow-night.vim
 vim-addon-mw-utils
 vim-airline
+vim-better-whitespace
 vim-fugitive
 vim-gitgutter
 vim-puppet

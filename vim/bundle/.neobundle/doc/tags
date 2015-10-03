@@ -233,6 +233,9 @@ ClearAllCtrlPCaches	ctrlp.txt	/*ClearAllCtrlPCaches*
 ClearCtrlPCache	ctrlp.txt	/*ClearCtrlPCache*
 ControlP	ctrlp.txt	/*ControlP*
 CtrlP	ctrlp.txt	/*CtrlP*
+CurrentLineWhitespaceOff	better-whitespace.txt	/*CurrentLineWhitespaceOff*
+DisableWhitespace	better-whitespace.txt	/*DisableWhitespace*
+EnableWhitespace	better-whitespace.txt	/*EnableWhitespace*
 GitGutter	gitgutter.txt	/*GitGutter*
 GitGutterCommands	gitgutter.txt	/*GitGutterCommands*
 GitGutterContents	gitgutter.txt	/*GitGutterContents*
@@ -331,12 +334,15 @@ SnipMate-usage	SnipMate.txt	/*SnipMate-usage*
 SnipMate-visual	SnipMate.txt	/*SnipMate-visual*
 SnipMate-zero-tabstop	SnipMate.txt	/*SnipMate-zero-tabstop*
 SnipMate.txt	SnipMate.txt	/*SnipMate.txt*
+StripWhitespace	better-whitespace.txt	/*StripWhitespace*
 TestArgs()	tlib.txt	/*TestArgs()*
 TestArgs1()	tlib.txt	/*TestArgs1()*
 TestArgs2()	tlib.txt	/*TestArgs2()*
 TestArgs3()	tlib.txt	/*TestArgs3()*
 TestGetArg()	tlib.txt	/*TestGetArg()*
 TestGetArg1()	tlib.txt	/*TestGetArg1()*
+ToggleStripWhitespaceOnSave	better-whitespace.txt	/*ToggleStripWhitespaceOnSave*
+ToggleWhitespace	better-whitespace.txt	/*ToggleWhitespace*
 add_statusline_func	airline.txt	/*add_statusline_func*
 airline	airline.txt	/*airline*
 airline-accents	airline.txt	/*airline-accents*
@@ -383,6 +389,7 @@ airline-windowswap	airline.txt	/*airline-windowswap*
 airline-writing-extensions	airline.txt	/*airline-writing-extensions*
 airline.txt	airline.txt	/*airline.txt*
 b:tcomment_def_{NAME}	tcomment.txt	/*b:tcomment_def_{NAME}*
+better-whitespace.txt	better-whitespace.txt	/*better-whitespace.txt*
 cached_file_contents	cached_file_contents.txt	/*cached_file_contents*
 ctrlp-changelog	ctrlp.txt	/*ctrlp-changelog*
 ctrlp-commands	ctrlp.txt	/*ctrlp-commands*
