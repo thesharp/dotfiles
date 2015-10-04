@@ -39,6 +39,7 @@ NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'JamshedVesuna/vim-markdown-preview'
 NeoBundle 'benmills/vimux'
+NeoBundle 'elzr/vim-json'
 call neobundle#end()
 
 " Required:
@@ -114,6 +115,9 @@ au FileType html setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 """ Markdown settings
 au FileType markdown setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
+""" JSON settings
+au FileType json setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
 """ Puppet settings
 au FileType puppet setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
@@ -155,3 +159,6 @@ let g:syntastic_puppet_puppetlint_args = "--no-documentation-check --no-80chars-
 
 "" Gist
 let g:gist_post_private = 1
+
+"" JSON
+let g:vim_json_syntax_conceal = 0

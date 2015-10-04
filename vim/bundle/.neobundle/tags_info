@@ -13,6 +13,7 @@ vim-airline
 vim-better-whitespace
 vim-fugitive
 vim-gitgutter
+vim-json
 vim-markdown
 vim-markdown-preview
 vim-puppet
