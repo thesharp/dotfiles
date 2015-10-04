@@ -60,6 +60,12 @@ set background=light
 colorscheme tomorrow-night
 let mapleader=","
 
+" Textmate style indentation
+vmap <leader>[ <gv
+vmap <leader>] >gv
+nmap <leader>[ <<
+nmap <leader>] >>
+
 " tmux/non-tmux home/end hack
 let tmux=$TMUX
 if tmux != ""
@@ -81,6 +87,9 @@ set nobackup
 set title
 set showcmd
 set ttyfast
+
+" clear highlighted search
+noremap <space> :set hlsearch! hlsearch?<cr>
 
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
@@ -163,3 +172,6 @@ let g:gist_post_private = 1
 
 "" JSON
 let g:vim_json_syntax_conceal = 0
+
+""" Fugitive
+nmap <silent> <leader>gs :Gstatus<cr>
