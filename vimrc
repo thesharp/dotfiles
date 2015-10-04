@@ -51,6 +51,7 @@ NeoBundleCheck
 
 """ General stuff
 " set nocompatible
+set autoread
 set backspace=indent,eol,start
 set modeline
 syntax on
