@@ -38,6 +38,7 @@ NeoBundle "ntpeters/vim-better-whitespace"
 NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'JamshedVesuna/vim-markdown-preview'
+NeoBundle 'benmills/vimux'
 call neobundle#end()
 
 " Required:
@@ -99,7 +100,8 @@ au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 au FileType python set colorcolumn=80
 au FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
-au FileType python map <Leader>b :w<CR>:!clear && /usr/bin/env python % <CR>
+" au FileType python map <Leader>b :w<CR>:!clear && /usr/bin/env python % <CR>
+au FileType python map <Leader>b :w<CR>:call VimuxRunCommandInDir("clear && /usr/bin/env python", 1)<CR>
 au FileType python map <Leader>p iimport pdb; pdb.set_trace()<ESC>
 
 let python_highlight_all = 1
