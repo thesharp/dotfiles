@@ -1,3 +1,6 @@
 mutt/cache
 mutt/certificates
 vim/.netrwhist
+mutt/accounts/*
+tmux/plugins/*
+tmux/resurrect/*
