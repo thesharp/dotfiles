@@ -35,6 +35,8 @@ dotfile bashrc
 dotfile screenrc
 dotfile tmux.conf
 dotdir vim
+dotdir mutt
+dotdir tmux
 
 # Darwin-specific
 if [ $OS == "Darwin" ] && [ ! -e $HOME/.bash_profile ] ; then

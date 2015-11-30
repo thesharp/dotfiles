@@ -30,7 +30,6 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle "squarefrog/tomorrow-night.vim"
 NeoBundle "tomtom/tcomment_vim"
 NeoBundle "garbas/vim-snipmate", {"depends": ["MarcWeber/vim-addon-mw-utils", "tomtom/tlib_vim"]}
-NeoBundle "honza/vim-snippets"
 NeoBundle "hdima/python-syntax"
 NeoBundle "rodjek/vim-puppet"
 NeoBundle "kien/ctrlp.vim"
@@ -40,6 +39,9 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'JamshedVesuna/vim-markdown-preview'
 NeoBundle 'benmills/vimux'
 NeoBundle 'elzr/vim-json'
+NeoBundle 'tpope/vim-obsession'
+NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'pearofducks/ansible-vim'
 call neobundle#end()
 
 " Required:
@@ -87,6 +89,8 @@ set nobackup
 set title
 set showcmd
 set ttyfast
+set splitbelow
+set splitright
 
 " clear highlighted search
 noremap <space> :set hlsearch! hlsearch?<cr>
@@ -105,11 +109,18 @@ map <F5> :set nonumber!<CR>:set foldcolumn=0<CR>
 set number
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
+""" Spelling
+set spelllang=en_us,ru_ru
+
+""" Airline
+set laststatus=2
+
 """ Python settings
 " au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 tw=80
 au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
-au FileType python set colorcolumn=80
+au FileType python set colorcolumn=80,110
 au FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+autocmd FileType python setlocal completeopt-=preview
 
 " au FileType python map <Leader>b :w<CR>:!clear && /usr/bin/env python % <CR>
 au FileType python map <Leader>b :w<CR>:call VimuxRunCommandInDir("clear && /usr/bin/env python", 1)<CR>
@@ -125,11 +136,20 @@ au FileType html setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 """ Markdown settings
 au FileType markdown setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
+""" RST settings
+au FileType rst setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
 """ JSON settings
 au FileType json setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 """ Puppet settings
-au FileType puppet setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+au FileType puppet setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
+
+""" Ansible settings
+au FileType ansible setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
+
+""" YAML settings
+au FileType yaml setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 """ GVIM settings
 if has("gui_running")
@@ -144,7 +164,8 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '^\.git$', '^\.gitmodules$']
+let NERDTreeShowHidden = 1
 
 """ Snippets
 let g:snips_author = 'Ilya Otyutskiy'
@@ -172,6 +193,10 @@ let g:gist_post_private = 1
 
 "" JSON
 let g:vim_json_syntax_conceal = 0
+
+"" Ansible
+let g:syntastic_yaml_checkers = ['pyyaml']
+let g:syntastic_ansible_checkers = ['pyyaml']
 
 """ Fugitive
 nmap <silent> <leader>gs :Gstatus<cr>
