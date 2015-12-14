@@ -5,3 +5,4 @@ vim/bundle
 mutt/accounts/*
 tmux/plugins/*
 tmux/resurrect/*
+*.pyc
