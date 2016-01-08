@@ -141,6 +141,7 @@ au FileType rst setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 """ JSON settings
 au FileType json setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+au FileType json map <Leader>f :%!python -m json.tool<CR>
 
 """ Puppet settings
 au FileType puppet setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
