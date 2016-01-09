@@ -45,6 +45,7 @@ NeoBundle 'pearofducks/ansible-vim'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'jlanzarotta/bufexplorer'
 NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'cespare/vim-toml'
 call neobundle#end()
 
 " Required:
