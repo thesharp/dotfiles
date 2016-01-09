@@ -42,6 +42,8 @@ NeoBundle 'elzr/vim-json'
 NeoBundle 'tpope/vim-obsession'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'pearofducks/ansible-vim'
+NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'jlanzarotta/bufexplorer'
 call neobundle#end()
 
 " Required:
@@ -201,3 +203,6 @@ let g:syntastic_ansible_checkers = ['pyyaml']
 
 """ Fugitive
 nmap <silent> <leader>gs :Gstatus<cr>
+
+""" BufExplorer
+nmap <silent> <leader>b :BufExplorer<cr>
