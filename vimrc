@@ -47,6 +47,7 @@ NeoBundle 'jlanzarotta/bufexplorer'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'cespare/vim-toml'
 NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'tpope/vim-rhubarb'
 call neobundle#end()
 
 " Required:
