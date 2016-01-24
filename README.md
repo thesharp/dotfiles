@@ -6,7 +6,7 @@ This is the home of my personal dotfiles. I use it to bootstrap a sane environme
 
 ## License
 
-All this stuff here is licensed under the [MIT license](../blob/master/LICENSE).
+All this stuff here is licensed under the [MIT license](LICENSE).
 
 ## How to
 
