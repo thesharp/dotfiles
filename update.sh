@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 OS=`uname`
 
@@ -40,6 +40,11 @@ dotdir tmux
 
 # Darwin-specific
 if [ $OS == "Darwin" ] && [ ! -e $HOME/.bash_profile ] ; then
+	ln -s $HOME/.bashrc $HOME/.bash_profile
+fi
+
+# OpenBSD-specific
+if [ $OS == "OpenBSD" ] && [ ! -e $HOME/.bash_profile ] ; then
 	ln -s $HOME/.bashrc $HOME/.bash_profile
 fi
 
