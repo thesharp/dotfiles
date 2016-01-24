@@ -141,6 +141,13 @@ au FileType html setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 
 """ Markdown settings
 au FileType markdown setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+autocmd FileType markdown setlocal spell
+
+""" gitcommit
+autocmd FileType gitcommit setlocal spell
+
+""" mail
+autocmd FileType mail setlocal spell
 
 """ RST settings
 au FileType rst setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
