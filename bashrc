@@ -69,6 +69,21 @@ function prompt_command {
 	echo -ne "\033]0;${USER}@${HOSTNAME%%.*}: ${PWD/#$HOME/~}\007"
 }
 
+function openbsd_prompt_command {
+	GIT_STATUS=$(git status --porcelain 2>/dev/null)
+	if [[ -n $GIT_STATUS ]] ; then
+		GIT_DIRTY=1
+	else
+		GIT_DIRTY=0
+	fi
+	if [ $GIT_DIRTY -eq 1 ] ; then
+		export PS1='[\u@\h \W dirty$(git_branch)]$ '
+	else
+		export PS1='[\u@\h \W$(git_branch)]$ '
+	fi
+	echo -ne "\033]0;${USER}@${HOSTNAME%%.*}: ${PWD/#$HOME/~}\007"
+}
+
 export PROMPT_COMMAND=prompt_command
 
 ### screen-specific stuff
@@ -125,6 +140,15 @@ if [ `uname` == "Darwin" ] ; then
 
 	# rvm stuff
 	[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+fi
+
+### OpenBSD-specific stuff
+if [ `uname` == "OpenBSD" ] ; then
+	alias ls="colorls -G"
+	export LANG=en_US.UTF-8
+	export LC_ALL=en_US.UTF-8
+	export PROMPT_COMMAND=openbsd_prompt_command
+	export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
 fi
 
 ### autostart
