@@ -165,6 +165,12 @@ au FileType ansible setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 """ YAML settings
 au FileType yaml setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
+""" Ruby settings
+au FileType ruby setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
+""" XML settings
+au FileType xml setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
 """ GVIM settings
 if has("gui_running")
     colorscheme desert
