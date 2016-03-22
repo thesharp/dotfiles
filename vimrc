@@ -217,7 +217,7 @@ let g:vim_json_syntax_conceal = 0
 
 "" Ansible
 let g:syntastic_yaml_checkers = ['pyyaml']
-let g:syntastic_ansible_checkers = ['pyyaml']
+let g:syntastic_ansible_checkers = ['ansible_lint']
 
 """ Fugitive
 nmap <silent> <leader>gs :Gstatus<cr>
