@@ -151,7 +151,7 @@ autocmd FileType gitcommit setlocal spell
 autocmd FileType mail setlocal spell
 
 """ RST settings
-au FileType rst setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+au FileType rst setlocal tabstop=6 expandtab shiftwidth=3 softtabstop=3
 
 """ JSON settings
 au FileType json setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
