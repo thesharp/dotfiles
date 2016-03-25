@@ -172,6 +172,9 @@ au FileType ruby setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 """ XML settings
 au FileType xml setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
+""" VimL settings
+au FileType vim setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
 """ GVIM settings
 if has("gui_running")
     colorscheme desert
