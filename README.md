@@ -105,6 +105,26 @@ git clone --recursive git@github.com:thesharp/dotfiles $HOME/dotfiles
 $HOME/dotfiles/update.sh
 ```
 
+### FreeBSD
+
+* Install necessary packages
+
+```bash
+pkg install bash bash-completion sudo git vim gnuls
+```
+
+* Clone the dotfiles repo
+
+```bash
+git clone --recursive git@github.com:thesharp/dotfiles $HOME/dotfiles
+```
+
+* Run the update.sh script to link stuff up
+
+```bash
+$HOME/dotfiles/update.sh
+```
+
 ## Local configuration file
 
 Local configuration file is located at `$HOME/.dotfilesrc`. The template for that file is located at `$HOME/dotfiles/dotfilesrc`.

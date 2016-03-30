@@ -151,6 +151,19 @@ if [ `uname` == "OpenBSD" ] ; then
 	export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
 fi
 
+### FreeBSD-specific stuff
+if [ `uname` == "FreeBSD" ] ; then
+	alias ls="gnuls --color"
+	export LANG=en_US.UTF-8
+	export LC_ALL=en_US.UTF-8
+	export PATH=$HOME/dotfiles/bin:$PATH
+
+	# bash completion
+	if [ -f /usr/local/share/bash-completion/bash_completion ]; then
+		. /usr/local/share/bash-completion/bash_completion
+	fi
+fi
+
 ### autostart
 #fixagent
 # screen_reattach
