@@ -122,7 +122,7 @@ git clone --recursive git@github.com:thesharp/dotfiles $HOME/dotfiles
 * Run the update.sh script to link stuff up
 
 ```bash
-$HOME/dotfiles/update.sh
+bash $HOME/dotfiles/update.sh
 ```
 
 ## Local configuration file
