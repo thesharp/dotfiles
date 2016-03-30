@@ -65,6 +65,11 @@ if [ $OS == "OpenBSD" ] && [ ! -e $HOME/.bash_profile ] ; then
 	ln -s $HOME/.bashrc $HOME/.bash_profile
 fi
 
+# FreeBSD-specific
+if [ $OS == "FreeBSD" ] && [ ! -e $HOME/.bash_profile ] ; then
+	ln -s $HOME/.bashrc $HOME/.bash_profile
+fi
+
 # Linux-specific
 if [ $OS == "Linux" ] ; then
 	dotfile Xresources
