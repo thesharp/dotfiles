@@ -79,9 +79,9 @@ nmap <leader>] >>
 " tmux/non-tmux home/end hack
 let tmux=$TMUX
 if tmux != ""
-	set term=screen-256color
+    set term=screen-256color
 else
-	set term=xterm-256color
+    set term=xterm-256color
 endif
 
 set autoindent
