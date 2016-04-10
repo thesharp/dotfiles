@@ -49,6 +49,7 @@ NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'cespare/vim-toml'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-rhubarb'
+NeoBundle 'fmoralesc/vim-pad'
 call neobundle#end()
 
 " Required:
