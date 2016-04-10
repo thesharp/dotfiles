@@ -163,6 +163,7 @@ au FileType puppet setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 
 """ Ansible settings
 au FileType ansible setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
+let g:ansible_extra_keywords_highlight = 1
 
 """ YAML settings
 au FileType yaml setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
@@ -220,8 +221,10 @@ let g:gist_post_private = 1
 let g:vim_json_syntax_conceal = 0
 
 "" Ansible
-let g:syntastic_yaml_checkers = ['pyyaml']
 let g:syntastic_ansible_checkers = ['ansible_lint']
+
+"" YAML
+let g:syntastic_yaml_checkers = ['pyyaml']
 
 """ Fugitive
 nmap <silent> <leader>gs :Gstatus<cr>
