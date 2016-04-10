@@ -230,4 +230,8 @@ let g:syntastic_yaml_checkers = ['pyyaml']
 nmap <silent> <leader>gs :Gstatus<cr>
 
 """ BufExplorer
-nmap <silent> <leader>b :BufExplorer<cr>
+nmap <silent> <leader>; :BufExplorer<cr>
+
+""" vim-pad
+let g:pad#default_format = "markdown"
+let g:pad#dir = "~/Dropbox/Notes"
