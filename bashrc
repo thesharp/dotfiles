@@ -131,8 +131,8 @@ if [ `uname` == "Darwin" ] ; then
 	brew=`brew --prefix`
 
 	# bash completion
-	if [ -f $brew/Cellar/bash-completion/1.3/etc/bash_completion ]; then
-		. $brew/Cellar/bash-completion/1.3/etc/bash_completion
+	if [ -f $brew/etc/bash_completion ]; then
+		. $brew/etc/bash_completion
 	fi
 
 	# pyenv (https://github.com/yyuu/pyenv) stuff
