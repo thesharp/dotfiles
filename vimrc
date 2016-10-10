@@ -43,6 +43,7 @@ NeoBundle 'elzr/vim-json'
 NeoBundle 'tpope/vim-obsession'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'pearofducks/ansible-vim'
+" NeoBundle 'chase/vim-ansible-yaml'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'jlanzarotta/bufexplorer'
 NeoBundle 'rust-lang/rust.vim'
@@ -164,6 +165,7 @@ au FileType puppet setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 """ Ansible settings
 au FileType ansible setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 let g:ansible_extra_keywords_highlight = 1
+" let g:ansible_options = {'ignore_blank_lines': 0}
 
 """ YAML settings
 au FileType yaml setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
