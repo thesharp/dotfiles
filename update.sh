@@ -44,11 +44,9 @@ function dotdir {
 # Common
 dotfile vimrc
 dotfile gitconfig
-dotfile bashrc
-dotfile screenrc
+dotfile zshrc
 dotfile tmux.conf
 dotdir vim
-dotdir mutt
 dotdir tmux
 
 # Darwin-specific
@@ -56,31 +54,10 @@ if [ $OS == "Darwin" ] ; then
 	if [ ! -e $HOME/.bash_profile ] ; then
 		ln -s $HOME/.bashrc $HOME/.bash_profile
 	fi
-	dotlaunchagent org.thesharp.sup-index-backup.plist
-	launchctl load $HOME/Library/LaunchAgents/org.thesharp.sup-index-backup.plist
-fi
-
-# OpenBSD-specific
-if [ $OS == "OpenBSD" ] && [ ! -e $HOME/.bash_profile ] ; then
-	ln -s $HOME/.bashrc $HOME/.bash_profile
-fi
-
-# FreeBSD-specific
-if [ $OS == "FreeBSD" ] && [ ! -e $HOME/.bash_profile ] ; then
-	ln -s $HOME/.bashrc $HOME/.bash_profile
 fi
 
 # Linux-specific
 if [ $OS == "Linux" ] ; then
 	dotfile Xresources
 	dotdir mplayer
-fi
-
-# Configuration file
-if [ ! -f ~/.dotfilesrc ] ; then
-	echo
-	echo "===== WARNING ====="
-	echo "You don't have a local configuration file."
-	echo "Probably you want one. See ~/dotfiles/dotfilesrc for instructions."
-	echo
 fi
