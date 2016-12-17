@@ -23,20 +23,13 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 * Install necessary packages
 
 ```bash
-brew install bash-completion git gnu-sed gnupg hub pip-completion pyenv pyenv-virtualenvwrapper reattach-to-user-namespace tmux wget
+brew install zsh-completion git gnu-sed gnupg hub pip-completion pyenv pyenv-virtualenvwrapper reattach-to-user-namespace tmux wget
 ```
 
 * Install vim
 
 ```bash
 brew install macvim --with-override-system-vim
-```
-
-* Install mutt
-
-```bash
-brew tap thesharp/homebrew-mutt
-brew install thesharp/homebrew-mutt/mutt --with-sidebar-patch --with-trash-patch
 ```
 
 * Clone the dotfiles repo
@@ -60,12 +53,8 @@ $HOME/dotfiles/update.sh
 * Install necessary packages (including vim)
 
 ```bash
-sudo yum install -y bash-completion git tmux wget vim-enhanced
+sudo yum install -y zsh git tmux wget vim-enhanced
 ```
-
-* Install mutt
-
-*Details coming next time I will install mutt on Linux*
 
 * Clone the dotfiles repo
 
@@ -90,7 +79,7 @@ echo "permit nopass keepenv { PKG_PATH ENV PS1 SSH_AUTH_SOCK } :wheel" >> /etc/d
 * Install necessary packages (including vim [choose a flavor like vim-7.4.769-no_x11-perl-python3-ruby], no mutt needed on OpenBSD boxes)
 
 ```bash
-doas pkg_add bash vim colorls git
+doas pkg_add zsh vim colorls git
 ```
 
 * Clone the dotfiles repo
@@ -110,7 +99,7 @@ $HOME/dotfiles/update.sh
 * Install necessary packages
 
 ```bash
-pkg install bash bash-completion sudo git vim gnuls
+pkg install zsh sudo git vim gnuls
 ```
 
 * Clone the dotfiles repo
@@ -124,9 +113,3 @@ git clone --recursive git@github.com:thesharp/dotfiles $HOME/dotfiles
 ```bash
 bash $HOME/dotfiles/update.sh
 ```
-
-## Local configuration file
-
-Local configuration file is located at `$HOME/.dotfilesrc`. The template for that file is located at `$HOME/dotfiles/dotfilesrc`.
-
-*Details coming next time I will install a new box with this requirement*
