@@ -123,6 +123,7 @@ set spelllang=en_us,ru_ru
 
 """ Airline
 set laststatus=2
+let g:airline_powerline_fonts = 1
 
 """ Python settings
 " au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 tw=80
