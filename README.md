@@ -10,7 +10,7 @@ All this stuff here is licensed under the [MIT license](LICENSE).
 
 ## How to
 
-### MacOS X
+### macOS
 
 *Full version coming when I will setup a new box*
 
