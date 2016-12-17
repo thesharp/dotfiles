@@ -48,6 +48,7 @@ dotfile zshrc
 dotfile tmux.conf
 dotdir vim
 dotdir tmux
+dotdir zsh
 
 # Darwin-specific
 if [ $OS == "Darwin" ] ; then
