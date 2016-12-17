@@ -181,8 +181,7 @@ au FileType vim setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 """ GVIM settings
 if has("gui_running")
-    colorscheme desert
-    set guifont=Terminus
+    set guifont=Monaco
 "    autocmd VimEnter * NERDTree
 endif
 
