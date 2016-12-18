@@ -68,6 +68,8 @@ if [[ `uname` == "Darwin" ]] ; then
 	if which pyenv > /dev/null; then eval "$(pyenv init -)" ; pyenv virtualenvwrapper ; fi
 fi
 
+alias scp="noglob scp"
+
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 export EDITOR=vim
