@@ -36,7 +36,8 @@ NeoBundle "rodjek/vim-puppet"
 NeoBundle "kien/ctrlp.vim"
 NeoBundle "ntpeters/vim-better-whitespace"
 NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
-NeoBundle 'tpope/vim-markdown'
+" NeoBundle 'tpope/vim-markdown'
+NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'JamshedVesuna/vim-markdown-preview'
 NeoBundle 'benmills/vimux'
 NeoBundle 'elzr/vim-json'
@@ -51,6 +52,11 @@ NeoBundle 'cespare/vim-toml'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-rhubarb'
 NeoBundle 'fmoralesc/vim-pad'
+NeoBundle 'fatih/vim-go'
+NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/echodoc.vim'
+NeoBundle 'mileszs/ack.vim'
+
 call neobundle#end()
 
 " Required:
@@ -68,14 +74,49 @@ set modeline
 syntax on
 set ruler rulerformat=%40(%<%f\ %m%=%r\ %l\ %c\ %p%%%)
 set background=light
+set cursorline
+set regexpengine=1
+set lazyredraw
 colorscheme tomorrow-night
-let mapleader=","
+highlight clear SpellBad
+highlight SpellBad ctermfg=009 ctermbg=011 guifg=#ff0000 guibg=#ffff00
+let mapleader="\<Space>"
+
+""" Leader bindings
+nmap <Leader>o :only<CR>
+nmap <Leader>q :bd<CR>
+nmap <Leader>h <C-w>h
+nmap <Leader>j <C-w>j
+nmap <Leader>k <C-w>k
+nmap <Leader>l <C-w>l
+nmap <Leader>f :NERDTreeFind<CR>
+nmap <Leader>c :copen<CR>
+
+"" Fugitive
+nmap <silent> <leader>gs :Gstatus<cr>
+nmap <Leader>gd :Gdiff<CR>
+nmap <Leader>gl :Glog -- %<CR><CR>:copen<CR>
+
+"" BufExplorer
+nmap <silent> <leader>; :BufExplorer<cr>
 
 " Textmate style indentation
 vmap <leader>[ <gv
 vmap <leader>] >gv
 nmap <leader>[ <<
 nmap <leader>] >>
+
+""" Remap arrows to quickfix-navigation
+nnoremap <silent> <Up> :cprevious<CR>
+nnoremap <silent> <Down> :cnext<CR>
+nnoremap <silent> <Left> :cpfile<CR>
+nnoremap <silent> <Right> :cnfile<CR>
+
+""" Jump between splits with C-hjkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " tmux/non-tmux home/end hack
 let tmux=$TMUX
@@ -102,16 +143,10 @@ set splitbelow
 set splitright
 
 " clear highlighted search
-noremap <space> :set hlsearch! hlsearch?<cr>
+noremap <Leader>s :set hlsearch! hlsearch?<cr>
 
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-
-""" Tab madness
-map <F1> :tabnew<CR>
-map <F2> :tabprev<CR>
-map <F3> :tabnext<CR>
-map <F4> :tabclose<CR>
 
 """ Line numbers settings
 map <F5> :set nonumber!<CR>:set foldcolumn=0<CR>
@@ -120,6 +155,7 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 
 """ Spelling
 set spelllang=en_us,ru_ru
+set spellfile=$HOME/.vim/spell/ru.utf-8.add
 
 """ Airline
 set laststatus=2
@@ -146,6 +182,7 @@ au FileType html setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 """ Markdown settings
 au FileType markdown setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 autocmd FileType markdown setlocal spell
+let g:vim_markdown_folding_disabled = 1
 
 """ gitcommit
 autocmd FileType gitcommit setlocal spell
@@ -182,13 +219,14 @@ au FileType vim setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 """ GVIM settings
 if has("gui_running")
-    set guifont=Monaco
+    set guifont=set guifont=Monaco\ for\ Powerline:h12
 "    autocmd VimEnter * NERDTree
 endif
 
 """ NERDtree
 " let g:NERDTreeWinPos = "right"
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
+map <F6> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -228,12 +266,83 @@ let g:syntastic_ansible_checkers = ['ansible_lint']
 "" YAML
 let g:syntastic_yaml_checkers = ['pyyaml']
 
-""" Fugitive
-nmap <silent> <leader>gs :Gstatus<cr>
-
-""" BufExplorer
-nmap <silent> <leader>; :BufExplorer<cr>
-
 """ vim-pad
 let g:pad#default_format = "markdown"
 let g:pad#dir = "~/Dropbox/Notes"
+
+""" golang
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+let g:go_fmt_command = "goimports"
+
+" let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_go_checkers = ['gometalinter']
+" let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
+let g:go_list_type = "quickfix"
+
+au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  " For no inserting <CR> key.
+  return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" Close popup by <Space>.
+" inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
+
+" AutoComplPop like behavior.
+let g:neocomplete#enable_auto_select = 0
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType go setlocal omnifunc=go#complete#Complete
+
+" " Enable heavy omni completion.
+" if !exists('g:neocomplete#sources#omni#input_patterns')
+"   let g:neocomplete#sources#omni#input_patterns = {}
+" endif

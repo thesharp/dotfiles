@@ -58,6 +58,8 @@ if [[ `uname` == "Darwin" ]] ; then
 	export PATH=/usr/local/sbin:/usr/local/bin:$HOME/dotfiles/bin:/usr/local/share/npm/bin:$HOME/.rvm/bin:$PATH
 	export PYENV_ROOT="$HOME/.pyenv"
 	export PATH="$PYENV_ROOT/bin:$PATH"
+	export GOPATH=/usr/local/opt/go
+	export PATH=$PATH:$GOPATH/bin
 
 	# homebrew
 	if [ -d /usr/local/share/zsh-completions ] ; then
