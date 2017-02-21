@@ -29,7 +29,7 @@ brew install zsh zsh-completion git gnu-sed gnupg hub pip-completion pyenv pyenv
 * Install vim
 
 ```bash
-brew install macvim --with-override-system-vim
+brew install macvim --with-override-system-vim --with-lua
 ```
 
 * Clone the dotfiles repo
