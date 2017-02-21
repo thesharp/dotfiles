@@ -23,7 +23,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 * Install necessary packages
 
 ```bash
-brew install zsh zsh-completion git gnu-sed gnupg hub pip-completion pyenv pyenv-virtualenvwrapper reattach-to-user-namespace tmux wget
+brew install zsh zsh-completion git gnu-sed gnupg hub pip-completion pyenv pyenv-virtualenvwrapper reattach-to-user-namespace tmux wget ack
 ```
 
 * Install vim
