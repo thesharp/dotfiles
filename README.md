@@ -12,57 +12,79 @@ All this stuff here is licensed under the [MIT license](LICENSE).
 
 ### macOS
 
-*Full version coming when I will setup a new box*
+- Install `Xcode` from the AppStore
 
-* Install homebrew
+- Install a patched `powerline` Monaco font
+```bash
+https://gist.github.com/rogual/6824790627960fc93077/raw/88d6a40aec5c2d9bc8db30ecbbc6b33fa3e3cb6b/Monaco%2520for%2520Powerline.otf
+```
 
+- Install homebrew
 ```bash
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-* Install necessary packages
-
+- Install necessary packages
 ```bash
-brew install zsh zsh-completion git gnu-sed gnupg hub pip-completion pyenv pyenv-virtualenvwrapper reattach-to-user-namespace tmux wget ack
+brew install zsh zsh-completions git gnu-sed gnupg hub pip-completion pyenv pyenv-virtualenvwrapper reattach-to-user-namespace tmux wget ack
 ```
 
-* Install vim
+- Install oh-my-zsh
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
 
+- Install vim
 ```bash
 brew install macvim --with-override-system-vim --with-lua
 ```
 
-* Clone the dotfiles repo
-
+- Clone the dotfiles repo
 ```bash
 git clone --recursive git@github.com:thesharp/dotfiles $HOME/dotfiles
 ```
 
-* Run the update.sh script to link stuff up
+- Remove the existing `~/.zshrc` file from oh-my-zsh installation
+```bash
+rm -f ~/.zshrc
+```
 
+- Run the update.sh script to link stuff up
 ```bash
 $HOME/dotfiles/update.sh
+```
+
+- Install Python 2.7
+
+```bash
+pyenv install 2.7.13
+```
+
+- Switch global Python version
+
+```bash
+pyenv global 2.7.13
 ```
 
 ### Linux
 
 *Full version coming when I will setup a new box*
 
-* Enable passwordless sudo
+- Enable passwordless sudo
 
-* Install necessary packages (including vim)
+- Install necessary packages (including vim)
 
 ```bash
 sudo yum install -y zsh git tmux wget vim-enhanced
 ```
 
-* Clone the dotfiles repo
+- Clone the dotfiles repo
 
 ```bash
 git clone --recursive git@github.com:thesharp/dotfiles $HOME/dotfiles
 ```
 
-* Run the update.sh script to link stuff up
+- Run the update.sh script to link stuff up
 
 ```bash
 $HOME/dotfiles/update.sh
@@ -70,25 +92,25 @@ $HOME/dotfiles/update.sh
 
 ### OpenBSD
 
-* Enable passwordless doas. Run it as root (su -)
+- Enable passwordless doas. Run it as root (su -)
 
 ```bash
 echo "permit nopass keepenv { PKG_PATH ENV PS1 SSH_AUTH_SOCK } :wheel" >> /etc/doas.conf
 ```
 
-* Install necessary packages (including vim [choose a flavor like vim-7.4.769-no_x11-perl-python3-ruby], no mutt needed on OpenBSD boxes)
+- Install necessary packages (including vim [choose a flavor like vim-7.4.769-no_x11-perl-python3-ruby])
 
 ```bash
 doas pkg_add zsh vim colorls git
 ```
 
-* Clone the dotfiles repo
+- Clone the dotfiles repo
 
 ```bash
 git clone --recursive git@github.com:thesharp/dotfiles $HOME/dotfiles
 ```
 
-* Run the update.sh script to link stuff up
+- Run the update.sh script to link stuff up
 
 ```bash
 $HOME/dotfiles/update.sh
@@ -96,19 +118,19 @@ $HOME/dotfiles/update.sh
 
 ### FreeBSD
 
-* Install necessary packages
+- Install necessary packages
 
 ```bash
 pkg install zsh sudo git vim gnuls
 ```
 
-* Clone the dotfiles repo
+- Clone the dotfiles repo
 
 ```bash
 git clone --recursive git@github.com:thesharp/dotfiles $HOME/dotfiles
 ```
 
-* Run the update.sh script to link stuff up
+- Run the update.sh script to link stuff up
 
 ```bash
 bash $HOME/dotfiles/update.sh
