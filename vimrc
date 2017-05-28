@@ -56,6 +56,7 @@ NeoBundle 'fatih/vim-go'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/echodoc.vim'
 NeoBundle 'mileszs/ack.vim'
+NeoBundle 'bracki/vim-prometheus'
 
 call neobundle#end()
 
@@ -206,7 +207,7 @@ let g:ansible_extra_keywords_highlight = 1
 " let g:ansible_options = {'ignore_blank_lines': 0}
 
 """ YAML settings
-au FileType yaml setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+au FileType yaml setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 
 """ Ruby settings
 au FileType ruby setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
@@ -216,6 +217,9 @@ au FileType xml setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 """ VimL settings
 au FileType vim setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
+""" Prometheus settings
+au FileType prometheus setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 
 """ GVIM settings
 if has("gui_running")
