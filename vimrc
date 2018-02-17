@@ -224,6 +224,9 @@ au FileType prometheus setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 """ TOML settings
 au FileType toml setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 
+""" Go settings
+au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+
 """ GVIM settings
 if has("gui_running")
     set guifont=set guifont=Monaco\ for\ Powerline:h12
@@ -290,7 +293,6 @@ let g:go_highlight_build_constraints = 1
 
 let g:go_fmt_command = "goimports"
 
-" let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_go_checkers = ['gometalinter']
 let g:go_metalinter_command = "gometalinter --fast"
 let g:syntastic_go_gometalinter_args = "--fast"
