@@ -221,6 +221,9 @@ au FileType vim setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 """ Prometheus settings
 au FileType prometheus setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 
+""" TOML settings
+au FileType toml setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
+
 """ GVIM settings
 if has("gui_running")
     set guifont=set guifont=Monaco\ for\ Powerline:h12
