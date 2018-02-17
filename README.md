@@ -36,7 +36,18 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 - Install vim
 ```bash
-brew install macvim --with-override-system-vim --with-lua
+brew install macvim --with-override-system-vim --with-lua --with-python3
+```
+
+- Link Python 3 and install pip3
+```bash
+sudo brew link python3
+brew postinstall python3
+```
+
+- Install Python 3 neovim support
+```bash
+pip3 install -u neovim
 ```
 
 - Clone the dotfiles repo
