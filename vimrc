@@ -311,7 +311,8 @@ let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const
 
 """ deoplete
 " neocomplete like
-set completeopt+=noinsert
+" set completeopt+=noinsert
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " Path to python interpreter for neovim
 let g:python3_host_prog  = '/usr/local/bin/python3'
