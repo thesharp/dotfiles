@@ -47,7 +47,7 @@ brew postinstall python3
 
 - Install Python 3 neovim support
 ```bash
-pip3 install -u neovim
+pip3 install neovim
 ```
 
 - Clone the dotfiles repo
