@@ -68,13 +68,13 @@ $HOME/dotfiles/update.sh
 - Install Python 2.7
 
 ```bash
-pyenv install 2.7.13
+pyenv install 2.7.14
 ```
 
 - Switch global Python version
 
 ```bash
-pyenv global 2.7.13
+pyenv global 2.7.14
 ```
 
 ### Linux
