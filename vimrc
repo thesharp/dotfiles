@@ -82,6 +82,7 @@ set background=light
 set cursorline
 set regexpengine=1
 set lazyredraw
+set updatetime=100
 colorscheme tomorrow-night
 highlight clear SpellBad
 highlight SpellBad ctermfg=009 ctermbg=011 guifg=#ff0000 guibg=#ffff00
