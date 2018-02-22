@@ -78,13 +78,12 @@ highlight SpellBad ctermfg=009 ctermbg=011 guifg=#ff0000 guibg=#ffff00
 let mapleader="\<Space>"
 
 """ Leader bindings
-nmap <Leader>o :only<CR>
-nmap <Leader>q :bd<CR>
-nmap <Leader>h <C-w>h
-nmap <Leader>j <C-w>j
-nmap <Leader>k <C-w>k
-nmap <Leader>l <C-w>l
-nmap <Leader>f :NERDTreeFind<CR>
+nmap <silent> <Leader>o :only<CR>
+nmap <silent> <Leader>q :bd<CR>
+nmap <silent> <Leader>h <C-w>h
+nmap <silent> <Leader>j <C-w>j
+nmap <silent> <Leader>k <C-w>k
+nmap <silent> <Leader>l <C-w>l
 nmap <Leader>c :copen<CR>
 
 "" Fugitive
@@ -95,11 +94,22 @@ nmap <Leader>gl :Glog -- %<CR><CR>:copen<CR>
 "" BufExplorer
 nmap <silent> <leader>; :BufExplorer<cr>
 
-" Textmate style indentation
+"" Textmate style indentation
 vmap <leader>[ <gv
 vmap <leader>] >gv
 nmap <leader>[ <<
 nmap <leader>] >>
+
+"" fzf
+nmap <silent> <leader>f :Files<CR>
+nmap <silent> <leader>b :Buffers<CR>
+
+"" NERDTree
+nmap <silent> <leader>n :NERDTreeToggle<CR>
+nmap <silent> <Leader>F :NERDTreeFind<CR>
+
+"" ack / ag
+nmap <leader>a :Ack!<Space>
 
 """ Remap arrows to quickfix-navigation
 nnoremap <silent> <Up> :cprevious<CR>
