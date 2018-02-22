@@ -264,7 +264,7 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = '--ignore="E501"'
 
 "" Puppet
-let g:syntastic_puppet_puppetlint_args = "--no-documentation-check --no-80chars-check --no-autoloader_layout-check --no-variable_scope-check --fail-on-warnings"
+let g:syntastic_puppet_puppetlint_args = "--no-documentation-check --no-80chars-check --no-autoloader_layout-check --no-variable_scope-check --fail-on-warnings --no-140chars-check"
 
 "" Gist
 let g:gist_post_private = 1
@@ -279,8 +279,8 @@ let g:syntastic_ansible_checkers = ['ansible_lint']
 let g:syntastic_yaml_checkers = ['pyyaml']
 
 """ vim-pad
-let g:pad#default_format = "markdown"
-let g:pad#dir = "~/Dropbox/Notes"
+" let g:pad#default_format = "markdown"
+" let g:pad#dir = "~/Dropbox/Notes"
 
 """ golang
 let g:go_highlight_functions = 1
@@ -319,3 +319,25 @@ let g:python3_host_skip_check = 1
 
 " Run deoplete.nvim automatically
 let g:deoplete#enable_at_startup = 1
+
+""" fzf
+set rtp+=/usr/local/opt/fzf
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+""" ack / ag
+if executable('ag')
+      let g:ackprg = 'ag --vimgrep'
+endif
