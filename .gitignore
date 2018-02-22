@@ -2,8 +2,10 @@ mutt/cache
 mutt/certificates
 vim/.netrwhist
 vim/bundle
+vim/autoload/plug.vim
 mutt/accounts/*
 tmux/plugins/*
 tmux/resurrect/*
 *.pyc
 vim/spell/ru.utf-8.add.spl
+Session.vim
