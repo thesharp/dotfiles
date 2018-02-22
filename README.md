@@ -26,7 +26,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 - Install necessary packages
 ```bash
-brew install zsh zsh-completions git gnu-sed gnupg hub pip-completion pyenv pyenv-virtualenvwrapper reattach-to-user-namespace tmux wget ack
+brew install zsh zsh-completions git gnu-sed gnupg hub pip-completion pyenv pyenv-virtualenvwrapper reattach-to-user-namespace tmux wget ag fzf
 ```
 
 - Install oh-my-zsh
