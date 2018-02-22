@@ -58,7 +58,8 @@ Plug 'bracki/vim-prometheus'
 call plug#end()
 
 """ General stuff
-" set nocompatible
+set nocompatible
+filetype plugin indent on
 set autoread
 set backspace=indent,eol,start
 set modeline
@@ -69,6 +70,8 @@ set cursorline
 set regexpengine=1
 set lazyredraw
 set updatetime=100
+set noshowmode
+set clipboard=unnamed
 colorscheme tomorrow-night
 highlight clear SpellBad
 highlight SpellBad ctermfg=009 ctermbg=011 guifg=#ff0000 guibg=#ffff00
