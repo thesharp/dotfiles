@@ -68,6 +68,9 @@ if [[ `uname` == "Darwin" ]] ; then
 
 	# pyenv (https://github.com/yyuu/pyenv) stuff
 	if which pyenv > /dev/null; then eval "$(pyenv init -)" ; pyenv virtualenvwrapper ; fi
+
+	# fzf / ag
+	export FZF_DEFAULT_COMMAND='ag -g ""'
 fi
 
 alias scp="noglob scp"
