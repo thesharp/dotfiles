@@ -170,7 +170,7 @@ let g:airline_powerline_fonts = 1
 " au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 tw=80
 au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 au FileType python set colorcolumn=80,110
-au FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+au FileType python setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setlocal completeopt-=preview
 
 " au FileType python map <Leader>b :w<CR>:!clear && /usr/bin/env python % <CR>
