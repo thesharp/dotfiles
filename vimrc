@@ -1,75 +1,61 @@
-""" NeoBundle
-" Note: Skip initialization for vim-tiny or vim-small.
-if 0 | endif
-
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
-
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+""" vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
+call plug#begin('~/.vim/bundle')
 
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+Plug 'junegunn/vim-plug'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-fugitive'
+Plug 'squarefrog/tomorrow-night.vim'
+Plug 'tomtom/tcomment_vim'
+Plug 'vim-python/python-syntax'
+Plug 'rodjek/vim-puppet'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'mattn/webapi-vim'
+Plug 'mattn/gist-vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'benmills/vimux'
+Plug 'elzr/vim-json'
+Plug 'tpope/vim-obsession'
+Plug 'pearofducks/ansible-vim'
+Plug 'Raimondi/delimitMate'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'cespare/vim-toml'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-rhubarb'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'Shougo/deoplete.nvim'
+Plug 'zchee/deoplete-go', {'do': 'make'}
+Plug 'mileszs/ack.vim'
+Plug 'bracki/vim-prometheus'
 
-" My Bundles here:
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'Xuyuanp/nerdtree-git-plugin'
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle "squarefrog/tomorrow-night.vim"
-NeoBundle "tomtom/tcomment_vim"
-NeoBundle "garbas/vim-snipmate", {"depends": ["MarcWeber/vim-addon-mw-utils", "tomtom/tlib_vim"]}
-NeoBundle "hdima/python-syntax"
-NeoBundle "rodjek/vim-puppet"
-NeoBundle "kien/ctrlp.vim"
-NeoBundle "ntpeters/vim-better-whitespace"
-NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
-" NeoBundle 'tpope/vim-markdown'
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'JamshedVesuna/vim-markdown-preview'
-NeoBundle 'benmills/vimux'
-NeoBundle 'elzr/vim-json'
-NeoBundle 'tpope/vim-obsession'
-NeoBundle 'davidhalter/jedi-vim'
-NeoBundle 'pearofducks/ansible-vim'
-" NeoBundle 'chase/vim-ansible-yaml'
-NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'jlanzarotta/bufexplorer'
-NeoBundle 'rust-lang/rust.vim'
-NeoBundle 'cespare/vim-toml'
-NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'tpope/vim-rhubarb'
-NeoBundle 'fmoralesc/vim-pad'
-NeoBundle 'fatih/vim-go'
-" NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'roxma/nvim-yarp'
-NeoBundle 'roxma/vim-hug-neovim-rpc'
-NeoBundle 'Shougo/deoplete.nvim'
-NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
-NeoBundle 'Shougo/echodoc.vim'
-NeoBundle 'mileszs/ack.vim'
-NeoBundle 'bracki/vim-prometheus'
+""" Disabled plugins
 
-call neobundle#end()
+" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'tpope/vim-markdown'
+" Plug 'JamshedVesuna/vim-markdown-preview'
+" Plug 'davidhalter/jedi-vim'
+" Plug 'chase/vim-ansible-yaml'
+" Plug 'rust-lang/rust.vim'
+" Plug 'fmoralesc/vim-pad'
+" Plug 'Shougo/neocomplete.vim'
+" Plug 'Shougo/echodoc.vim'
+" Plug 'garbas/vim-snipmate', {'depends': ['MarcWeber/vim-addon-mw-utils', 'tomtom/tlib_vim']}
 
-" Required:
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
+call plug#end()
 
 """ General stuff
 " set nocompatible
