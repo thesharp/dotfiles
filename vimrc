@@ -207,6 +207,7 @@ au FileType puppet setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 
 """ Ansible settings
 au FileType ansible setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
+au FileType yaml.ansible setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 let g:ansible_extra_keywords_highlight = 1
 " let g:ansible_options = {'ignore_blank_lines': 0}
 
@@ -296,8 +297,8 @@ let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
 
 let g:syntastic_go_checkers = ['gometalinter']
-let g:go_metalinter_command = "gometalinter --fast"
-let g:syntastic_go_gometalinter_args = "--fast"
+let g:go_metalinter_command = "gometalinter --fast -e 'Subprocess launching'"
+let g:syntastic_go_gometalinter_args = "--fast -e 'Subprocess launching' -e 'composite literal uses unkeyed fields'"
 " let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 let g:go_list_type = "quickfix"
@@ -310,6 +311,9 @@ let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const
 """ deoplete
 " neocomplete like
 " set completeopt+=noinsert
+
+set completeopt-=preview
+
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " Path to python interpreter for neovim
