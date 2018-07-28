@@ -41,6 +41,7 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-go', {'do': 'make'}
 Plug 'mileszs/ack.vim'
 Plug 'bracki/vim-prometheus'
+Plug 'martinda/Jenkinsfile-vim-syntax'
 
 """ Disabled plugins
 
@@ -231,6 +232,10 @@ au FileType toml setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 
 """ Go settings
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+
+""" Jenkinsfile settings
+au FileType Jenkinsfile setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+au FileType groovy setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 """ GVIM settings
 if has("gui_running")
