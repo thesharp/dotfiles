@@ -80,7 +80,6 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 export EDITOR=vim
 export PAGER=less
 export HISTCONTROL=ignoredups
-export TERM=screen-256color
 export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
