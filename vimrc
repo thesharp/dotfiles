@@ -42,6 +42,7 @@ Plug 'zchee/deoplete-go', {'do': 'make'}
 Plug 'mileszs/ack.vim'
 Plug 'bracki/vim-prometheus'
 Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'tpope/vim-eunuch'
 
 """ Disabled plugins
 
