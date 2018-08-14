@@ -50,13 +50,6 @@ dotdir vim
 dotdir tmux
 dotdir zsh
 
-# Darwin-specific
-if [ $OS == "Darwin" ] ; then
-	if [ ! -e $HOME/.bash_profile ] ; then
-		ln -s $HOME/.bashrc $HOME/.bash_profile
-	fi
-fi
-
 # Linux-specific
 if [ $OS == "Linux" ] ; then
 	dotfile Xresources
