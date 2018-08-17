@@ -43,6 +43,9 @@ Plug 'mileszs/ack.vim'
 Plug 'bracki/vim-prometheus'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'tpope/vim-eunuch'
+Plug 'lervag/vimtex'
+Plug 'tpope/vim-surround'
+Plug 'godlygeek/tabular'
 
 """ Disabled plugins
 
@@ -142,6 +145,7 @@ menu Encoding.cp866 :e ++enc=cp866<CR>
 menu Encoding.utf-8 :e ++enc=utf8 <CR>
 map <F8> :emenu Encoding.<TAB>
 set hlsearch
+set incsearch
 set nobackup
 set title
 set showcmd
@@ -150,7 +154,7 @@ set splitbelow
 set splitright
 
 " clear highlighted search
-noremap <Leader>s :set hlsearch! hlsearch?<cr>
+noremap <silent> <Leader>s :let @/=""<cr>
 
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
@@ -238,6 +242,11 @@ au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 au FileType Jenkinsfile setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 au FileType groovy setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
+""" LaTeX settings
+let g:syntastic_tex_checkers = ['chktex']
+au FileType tex setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
+" let g:vimtex_fold_enabled = 1
+
 """ GVIM settings
 if has("gui_running")
     set guifont=set guifont=Monaco\ for\ Powerline:h12
@@ -251,6 +260,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | wincmd p |
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '^\.git$', '^\.gitmodules$']
 let NERDTreeShowHidden = 1
+let NERDTreeMinimalUI = 0
 
 """ Snippets
 let g:snips_author = 'Ilya Otyutskiy'
