@@ -145,6 +145,7 @@ menu Encoding.cp866 :e ++enc=cp866<CR>
 menu Encoding.utf-8 :e ++enc=utf8 <CR>
 map <F8> :emenu Encoding.<TAB>
 set hlsearch
+set incsearch
 set nobackup
 set title
 set showcmd
@@ -153,7 +154,7 @@ set splitbelow
 set splitright
 
 " clear highlighted search
-noremap <Leader>s :set hlsearch! hlsearch?<cr>
+noremap <silent> <Leader>s :let @/=""<cr>
 
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
