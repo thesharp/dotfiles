@@ -43,6 +43,7 @@ Plug 'mileszs/ack.vim'
 Plug 'bracki/vim-prometheus'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'tpope/vim-eunuch'
+Plug 'lervag/vimtex'
 
 """ Disabled plugins
 
@@ -237,6 +238,11 @@ au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 """ Jenkinsfile settings
 au FileType Jenkinsfile setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 au FileType groovy setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
+""" LaTeX settings
+let g:syntastic_tex_checkers = ['chktex']
+au FileType tex setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
+" let g:vimtex_fold_enabled = 1
 
 """ GVIM settings
 if has("gui_running")
