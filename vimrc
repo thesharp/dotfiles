@@ -259,6 +259,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | wincmd p |
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '^\.git$', '^\.gitmodules$']
 let NERDTreeShowHidden = 1
+let NERDTreeMinimalUI = 1
 
 """ Snippets
 let g:snips_author = 'Ilya Otyutskiy'
