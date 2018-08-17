@@ -162,6 +162,7 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 """ Line numbers settings
 map <F5> :set nonumber!<CR>:set foldcolumn=0<CR>
 set number
+set relativenumber
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 """ Spelling
