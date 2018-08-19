@@ -314,7 +314,7 @@ let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
 
 let g:syntastic_go_checkers = ['gometalinter']
-let g:syntastic_go_gometalinter_args = "-D gosec -D gotype -D gotypex --fast -e 'Subprocess launching' -e 'composite literal uses unkeyed fields'"
+let g:syntastic_go_gometalinter_args = "-D gosec -D gotype -D gotypex --fast -e 'Subprocess launching' -e 'composite literal uses unkeyed fields' -e 'should have a package comment' --min-confidence=0 --cyclo-over=15"
 " let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 let g:go_list_type = "quickfix"
