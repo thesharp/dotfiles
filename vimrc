@@ -45,7 +45,7 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'tpope/vim-eunuch'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-surround'
-Plug 'godlygeek/tabular'
+" Plug 'godlygeek/tabular'
 
 """ Disabled plugins
 
