@@ -42,7 +42,7 @@ function dotdir {
 }
 
 function dotconfigdir {
-	if [ -d $HOME/.$1 ] ; then
+	if [ -d $HOME/.config/$1 ] ; then
 		if [ -L $HOME/.config/$1 ] ; then
 			echo "Directory already linked: .config/$1"
 		else
@@ -59,6 +59,7 @@ dotfile vimrc
 dotfile gitconfig
 dotfile zshrc
 dotfile tmux.conf
+dotfile latexmkrc
 dotdir vim
 dotdir tmux
 dotdir zsh
