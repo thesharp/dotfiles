@@ -41,6 +41,19 @@ function dotdir {
 	fi
 }
 
+function dotconfigdir {
+	if [ -d $HOME/.$1 ] ; then
+		if [ -L $HOME/.config/$1 ] ; then
+			echo "Directory already linked: .config/$1"
+		else
+			echo "Directory exists: .config/$1. Probably you want to remove it and run update.sh again."
+		fi
+	else
+		ln -s $HOME/dotfiles/$1 $HOME/.config/$1
+		echo "Linking directory .config/$1"
+	fi
+}
+
 # Common
 dotfile vimrc
 dotfile gitconfig
@@ -49,6 +62,7 @@ dotfile tmux.conf
 dotdir vim
 dotdir tmux
 dotdir zsh
+dotconfigdir ranger
 
 # Linux-specific
 if [ $OS == "Linux" ] ; then
