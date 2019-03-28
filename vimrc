@@ -238,6 +238,7 @@ au FileType toml setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 
 """ Go settings
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+au FileType gohtmltmpl setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 
 """ Jenkinsfile settings
 au FileType Jenkinsfile setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
@@ -321,6 +322,8 @@ let g:go_list_type = "quickfix"
 
 " deoplete-go settings
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+" let g:deoplete#sources#go#use_cache = 1
+" let g:deoplete#sources#go#source_importer = 1
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
 
