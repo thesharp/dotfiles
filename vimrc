@@ -13,7 +13,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'squarefrog/tomorrow-night.vim'
 Plug 'tomtom/tcomment_vim'
@@ -37,8 +37,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'Shougo/deoplete.nvim'
-Plug 'zchee/deoplete-go', {'do': 'make'}
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'mileszs/ack.vim'
 Plug 'bracki/vim-prometheus'
 Plug 'martinda/Jenkinsfile-vim-syntax'
@@ -245,7 +244,6 @@ au FileType Jenkinsfile setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 au FileType groovy setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 """ LaTeX settings
-let g:syntastic_tex_checkers = ['chktex']
 au FileType tex setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 " let g:vimtex_fold_enabled = 1
 
@@ -268,34 +266,22 @@ let NERDTreeMinimalUI = 0
 let g:snips_author = 'Ilya Otyutskiy'
 let g:snips_email = 'ilya.otyutskiy@icloud.com'
 
-""" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" ALE
+let g:ale_linters = {'tex': ['chktex'], 'python': ['flake8'], 'puppet': ['puppetlint'], 'ansible': ['ansible_lint'], 'yaml': ['pyyaml'], 'go': ['gometalinter']}
+let g:ale_linters_explicit = 1
+let g:ale_open_list = 1
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
+let g:ale_go_gometalinter_options = "-D gosec -D gotype -D gotypex --fast -e 'Subprocess launching' -e 'composite literal uses unkeyed fields' -e 'should have a package comment' --min-confidence=0 --cyclo-over=15"
+let g:ale_puppet_puppetlint_options = "--no-documentation-check --no-80chars-check --no-autoloader_layout-check --no-variable_scope-check --fail-on-warnings --no-140chars-check"
+let g:ale_python_flake8_options = '--ignore="E501"'
 
-"" Python
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args = '--ignore="E501"'
-
-"" Puppet
-let g:syntastic_puppet_puppetlint_args = "--no-documentation-check --no-80chars-check --no-autoloader_layout-check --no-variable_scope-check --fail-on-warnings --no-140chars-check"
+let g:airline#extensions#ale#enabled = 1
 
 "" Gist
 let g:gist_post_private = 1
 
 "" JSON
 let g:vim_json_syntax_conceal = 0
-
-"" Ansible
-let g:syntastic_ansible_checkers = ['ansible_lint']
-
-"" YAML
-let g:syntastic_yaml_checkers = ['pyyaml']
 
 """ vim-pad
 " let g:pad#default_format = "markdown"
@@ -314,22 +300,58 @@ let g:go_highlight_build_constraints = 1
 
 let g:go_fmt_command = "goimports"
 
-let g:syntastic_go_checkers = ['gometalinter']
-let g:syntastic_go_gometalinter_args = "-D gosec -D gotype -D gotypex --fast -e 'Subprocess launching' -e 'composite literal uses unkeyed fields' -e 'should have a package comment' --min-confidence=0 --cyclo-over=15"
-" let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-
 let g:go_list_type = "quickfix"
 
-" deoplete-go settings
-let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-" let g:deoplete#sources#go#use_cache = 1
-" let g:deoplete#sources#go#source_importer = 1
-let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+" coc.nvim settings
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
+" Use <c-space> for trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
 
-""" deoplete
-" neocomplete like
-" set completeopt+=noinsert
+" Use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use `[c` and `]c` for navigate diagnostics
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K for show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Use `:Format` for format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
+" Use `:Fold` for fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 set completeopt-=preview
 
@@ -339,9 +361,6 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 let g:python3_host_prog  = '/usr/local/bin/python3'
 " Skip the check of neovim module
 let g:python3_host_skip_check = 1
-
-" Run deoplete.nvim automatically
-let g:deoplete#enable_at_startup = 1
 
 """ fzf
 set rtp+=/usr/local/opt/fzf
