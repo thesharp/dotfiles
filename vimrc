@@ -48,16 +48,10 @@ Plug 'tpope/vim-surround'
 
 """ Disabled plugins
 
-" Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'tpope/vim-markdown'
 " Plug 'JamshedVesuna/vim-markdown-preview'
-" Plug 'davidhalter/jedi-vim'
-" Plug 'chase/vim-ansible-yaml'
 " Plug 'rust-lang/rust.vim'
 " Plug 'fmoralesc/vim-pad'
-" Plug 'Shougo/neocomplete.vim'
-" Plug 'Shougo/echodoc.vim'
-" Plug 'garbas/vim-snipmate', {'depends': ['MarcWeber/vim-addon-mw-utils', 'tomtom/tlib_vim']}
 
 call plug#end()
 
