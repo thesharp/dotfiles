@@ -12,7 +12,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'squarefrog/tomorrow-night.vim'
@@ -165,6 +165,10 @@ set spellfile=$HOME/.vim/spell/ru.utf-8.add
 """ Airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
+
+""" Signify
+let g:signify_vcs_list = [ 'git' ]
+let g:signify_realtime = 1
 
 """ Python settings
 " au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 tw=80
