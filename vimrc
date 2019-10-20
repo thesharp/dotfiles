@@ -5,7 +5,12 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('~/.vim/bundle')
+if !has("nvim")
+    call plug#begin('~/.vim/bundle')
+else
+    call plug#begin('~/.config/nvim/bundle')
+endif
+
 
 Plug 'junegunn/vim-plug'
 Plug 'scrooloose/nerdtree'
@@ -123,10 +128,12 @@ nnoremap <C-l> <C-w>l
 
 " tmux/non-tmux home/end hack
 let tmux=$TMUX
-if tmux != ""
-    set term=screen-256color
-else
-    set term=xterm-256color
+if !has("nvim")
+    if tmux != ""
+        set term=screen-256color
+    else
+        set term=xterm-256color
+    endif
 endif
 
 set autoindent

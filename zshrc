@@ -54,6 +54,7 @@ if [[ `uname` == "Darwin" ]] ; then
 	alias tor-ssh='ssh -o ProxyCommand="nc -X 4 -x localhost:9150 %h %p"'
 	alias osxlock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 	alias git="hub"
+	alias vim="nvim"
 
 	export PATH=/usr/local/sbin:/usr/local/bin:$HOME/dotfiles/bin:/usr/local/share/npm/bin:$HOME/.rvm/bin:$PATH
 	export PYENV_ROOT="$HOME/.pyenv"
