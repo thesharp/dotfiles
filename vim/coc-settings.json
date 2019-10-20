@@ -3,9 +3,11 @@
        "golang": {
          "command": "go-langserver",
          "filetypes": ["go"],
+         "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
          "initializationOptions": {
            "gocodeCompletionEnabled": true,
            "diagnosticsEnabled": true,
+           "funcSnippetEnabled": false,
            "lintTool": "golint"
          }
        },
