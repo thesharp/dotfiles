@@ -168,7 +168,7 @@ let g:airline_powerline_fonts = 1
 
 """ Signify
 let g:signify_vcs_list = [ 'git' ]
-let g:signify_realtime = 1
+let g:signify_realtime = 0
 
 """ Python settings
 " au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 tw=80
