@@ -64,6 +64,7 @@ dotdir vim
 dotdir tmux
 dotdir zsh
 dotconfigdir ranger
+dotconfigdir nvim
 
 # Linux-specific
 if [ $OS == "Linux" ] ; then

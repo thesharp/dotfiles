@@ -3,6 +3,7 @@ mutt/certificates
 vim/.netrwhist
 vim/bundle
 vim/autoload/plug.vim*
+nvim/bundle
 mutt/accounts/*
 tmux/plugins/*
 tmux/resurrect/*
