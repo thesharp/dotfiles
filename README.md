@@ -1,9 +1,5 @@
 # dotfiles
 
-## About
-
-This is the home of my personal dotfiles. I use it to bootstrap a sane environment for me to work on various machines with different operating systems.
-
 ## License
 
 All this stuff here is licensed under the [MIT license](LICENSE).
@@ -24,7 +20,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 - Install necessary packages
 ```bash
-brew install zsh zsh-completions git gnu-sed gnupg hub pip-completion pyenv pyenv-virtualenvwrapper reattach-to-user-namespace tmux wget ag fzf macvim
+brew install zsh zsh-completions git gnu-sed gnupg hub pip-completion pyenv pyenv-virtualenvwrapper reattach-to-user-namespace tmux wget ag fzf neovim
 ```
 
 - Install oh-my-zsh
