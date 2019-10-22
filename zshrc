@@ -55,6 +55,7 @@ if [[ `uname` == "Darwin" ]] ; then
 	alias osxlock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 	alias git="hub"
 	alias vim="nvim"
+	alias ag="rg"
 
 	export PATH=/usr/local/sbin:/usr/local/bin:$HOME/dotfiles/bin:/usr/local/share/npm/bin:$HOME/.rvm/bin:$PATH
 	export PYENV_ROOT="$HOME/.pyenv"
@@ -71,7 +72,7 @@ if [[ `uname` == "Darwin" ]] ; then
 	if which pyenv > /dev/null; then eval "$(pyenv init -)" ; pyenv virtualenvwrapper ; fi
 
 	# fzf / ag
-	export FZF_DEFAULT_COMMAND='ag -g ""'
+	export FZF_DEFAULT_COMMAND='rg --files --vimgrep'
 fi
 
 alias scp="noglob scp"
