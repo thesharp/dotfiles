@@ -48,6 +48,7 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'tpope/vim-eunuch'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-surround'
+Plug 'rhysd/git-messenger.vim'
 " Plug 'godlygeek/tabular'
 
 """ Disabled plugins
