@@ -11,7 +11,6 @@ else
     call plug#begin('~/.config/nvim/bundle')
 endif
 
-
 Plug 'junegunn/vim-plug'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
