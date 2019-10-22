@@ -278,7 +278,6 @@ let g:ale_open_list = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 
-let g:ale_go_gometalinter_options = "-D gosec -D gotype -D gotypex --fast -e 'Subprocess launching' -e 'composite literal uses unkeyed fields' -e 'should have a package comment' --min-confidence=0 --cyclo-over=15"
 let g:ale_go_golangci_lint_options = '-D gosec -D gochecknoglobals --enable-all'
 let g:ale_puppet_puppetlint_options = "--no-documentation-check --no-80chars-check --no-autoloader_layout-check --no-variable_scope-check --fail-on-warnings --no-140chars-check"
 let g:ale_python_flake8_options = '--ignore="E501"'
