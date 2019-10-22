@@ -146,6 +146,7 @@ menu Encoding.utf-8 :e ++enc=utf8 <CR>
 map <F8> :emenu Encoding.<TAB>
 set hlsearch
 set incsearch
+set inccommand=nosplit
 set nobackup
 set title
 set showcmd
