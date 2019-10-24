@@ -268,10 +268,6 @@ let NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '^\.git$', '^\.gitmodules$']
 let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 0
 
-""" Snippets
-let g:snips_author = 'Ilya Otyutskiy'
-let g:snips_email = 'ilya.otyutskiy@icloud.com'
-
 " ALE
 let g:ale_linters = {'tex': ['chktex'], 'python': ['flake8'], 'puppet': ['puppetlint'], 'ansible': ['ansible_lint'], 'yaml': ['pyyaml'], 'go': ['golangci-lint']}
 let g:ale_linters_explicit = 1
