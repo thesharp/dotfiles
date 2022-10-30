@@ -59,14 +59,15 @@ if [[ `uname` == "Darwin" ]] ; then
 
 	export PATH=/usr/local/sbin:/usr/local/bin:$HOME/dotfiles/bin:/usr/local/share/npm/bin:$HOME/.rvm/bin:$PATH
 	export PYENV_ROOT="$HOME/.pyenv"
-	export PATH="$PYENV_ROOT/bin:$PATH"
-	export GOPATH=$HOME/Dropbox/Projects/go
+	export PATH="$PYENV_ROOT/shims:$PATH"
+	export GOPATH=$HOME/Projects/go
 	export PATH=$PATH:$GOPATH/bin
 
 	# homebrew
 	if [ -d /usr/local/share/zsh-completions ] ; then
 		fpath=(/usr/local/share/zsh-completions $fpath)
 	fi
+	export HOMEBREW_NO_AUTO_UPDATE=1
 
 	# pyenv (https://github.com/yyuu/pyenv) stuff
 	if which pyenv > /dev/null; then eval "$(pyenv init -)" ; pyenv virtualenvwrapper ; fi
@@ -79,7 +80,7 @@ alias scp="noglob scp"
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-export EDITOR=vim
+export EDITOR=nvim
 export PAGER=less
 export HISTCONTROL=ignoredups
 export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
@@ -90,7 +91,7 @@ export LC_ALL=en_US.UTF-8
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew django fabric forklift github pip pyenv python sudo virtualenvwrapper)
+plugins=(git brew fabric forklift github pip pyenv python sudo virtualenvwrapper)
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/mc mc

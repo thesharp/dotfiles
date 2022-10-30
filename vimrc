@@ -49,6 +49,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-surround'
 Plug 'rhysd/git-messenger.vim'
+Plug 'mtth/scratch.vim'
 " Plug 'godlygeek/tabular'
 
 """ Disabled plugins
@@ -89,8 +90,14 @@ nmap <silent> <Leader>k <C-w>k
 nmap <silent> <Leader>l <C-w>l
 nmap <Leader>c :copen<CR>
 
+"" Signify
+nmap ]h <plug>(signify-next-hunk)
+nmap [h <plug>(signify-prev-hunk)
+nmap ]H 9999]h
+nmap [H 9999[h
+
 "" Fugitive
-nmap <silent> <leader>gs :Gstatus<cr>
+nmap <silent> <leader>gs :Git<cr>
 nmap <Leader>gd :Gdiff<CR>
 nmap <Leader>gl :Glog -- %<CR><CR>:copen<CR>
 
@@ -111,7 +118,7 @@ nmap <silent> <leader>b :Buffers<CR>
 nmap <silent> <leader>n :NERDTreeToggle<CR>
 nmap <silent> <Leader>F :NERDTreeFind<CR>
 
-"" ack / ag
+"" ack / ag / rg
 nmap <leader>a :Ack!<Space>
 
 """ Remap arrows to quickfix-navigation
@@ -275,7 +282,7 @@ let g:ale_open_list = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 
-let g:ale_go_golangci_lint_options = '-D gosec -D gochecknoglobals --enable-all'
+let g:ale_go_golangci_lint_options = '--fast'
 let g:ale_puppet_puppetlint_options = "--no-documentation-check --no-80chars-check --no-autoloader_layout-check --no-variable_scope-check --fail-on-warnings --no-140chars-check"
 let g:ale_python_flake8_options = '--ignore="E501"'
 
@@ -286,10 +293,6 @@ let g:gist_post_private = 1
 
 "" JSON
 let g:vim_json_syntax_conceal = 0
-
-""" vim-pad
-" let g:pad#default_format = "markdown"
-" let g:pad#dir = "~/Dropbox/Notes"
 
 """ golang
 let g:go_highlight_functions = 1
@@ -306,18 +309,52 @@ let g:go_fmt_command = "goimports"
 
 let g:go_list_type = "quickfix"
 
-" coc.nvim settings
+""" coc.nvim settings
+let g:python3_host_prog = "/Users/sharp/.pyenv/versions/py3nvim/bin/python"
+
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <c-space> for trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
+" Use <tab> and <S-tab> to navigate completion list: >
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
 
-" Use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Insert <tab> when previous text is space, refresh completion if not.
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Use <c-space> to trigger completion: >
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Use <CR> to confirm completion, use: >
+inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+
+" Map <tab> for trigger completion, completion confirm, snippet expand and jump
+" like VSCode: >
+  inoremap <silent><expr> <TAB>
+    \ coc#pum#visible() ? coc#_select_confirm() :
+    \ coc#expandableOrJumpable() ?
+    \ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
+
+  function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+  endfunction
+
+  let g:coc_snippet_next = '<tab>'
 
 " Use `[c` and `]c` for navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
@@ -378,7 +415,10 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
-""" ack / ag
-if executable('ag')
-      let g:ackprg = 'ag --vimgrep'
+""" ack / ag / rg
+if executable('rg')
+      let g:ackprg = 'rg --vimgrep'
 endif
+
+""" scratch.vim
+let g:scratch_persistence_file = '/Users/sharp/Yandex.Disk.localized/DB/vim/scratch'

@@ -1,0 +1,15 @@
+{
+    "diagnostic.displayByAle": true,
+    "languageserver": {
+       "golang": {
+         "command": "gopls",
+         "filetypes": ["go"],
+         "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"]
+       },
+       "dockerfile": {
+         "command": "docker-langserver",
+         "filetypes": ["dockerfile"],
+         "args": ["--stdio"]
+       }
+     }
+}

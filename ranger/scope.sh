@@ -90,6 +90,9 @@ handle_extension() {
         ogg)
 	    ogginfo "${FILE_PATH}" && exit 5
 	    ;;
+
+        json)
+	    cat "${FILE_PATH}" | jq && exit 5
     esac
 }
 

@@ -24,3 +24,5 @@
 
 [github]
 	user = thesharp
+[init]
+	defaultBranch = master
