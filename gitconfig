@@ -1,7 +1,6 @@
 [user]
 	name = Ilya Otyutskiy
-	email = ilya.otyutskiy@icloud.com
-	signingkey = 9442942A
+	email = sharp@thesharp.org
 
 [alias]
 	st = status
