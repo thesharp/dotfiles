@@ -310,6 +310,7 @@ let g:go_fmt_command = "goimports"
 let g:go_list_type = "quickfix"
 
 """ coc.nvim settings
+let g:coc_global_extensions = ['coc-json', 'coc-snippets']
 let g:python3_host_prog = "/Users/sharp/.pyenv/versions/py3nvim/bin/python"
 
 function! s:check_back_space() abort
