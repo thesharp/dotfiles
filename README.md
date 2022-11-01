@@ -15,6 +15,7 @@ All this stuff here is licensed under the [MIT license](LICENSE).
 - Install a patched `powerline` Monaco font
 ```bash
 https://disk.yandex.ru/d/PFmmqHUo8cKt5g
+https://disk.yandex.ru/d/H2eZvtdFVdUhYg -- JetBrains Light Nerd Font Complete
 ```
 
 - Apply an iTerm2 profile
