@@ -77,6 +77,7 @@ if [[ `uname` == "Darwin" ]] ; then
 fi
 
 alias scp="noglob scp"
+alias clickhouse-client="docker run -it clickhouse/clickhouse-server:22.3.7.28 clickhouse-client"
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
