@@ -55,7 +55,6 @@ function dotconfigdir {
 }
 
 # Common
-dotfile vimrc
 dotfile gitconfig
 dotfile zshrc
 dotfile tmux.conf

@@ -30,7 +30,7 @@ https://disk.yandex.ru/d/TtINxbTEEznZ4g
 
 - Install necessary packages
 ```bash
-brew install aria2 docker fzf git gnu-sed gnupg go hub jq neovim node pip-completion pyenv pyenv-virtualenv pyenv-virtualenvwrapper ranger reattach-to-user-namespace rg tmux tmuxinator wget xz yarn zsh zsh-completions
+brew install aria2 docker docker-buildx docker-compose fd fzf git gnu-sed gnupg go hub jq neovim node pip-completion pyenv pyenv-virtualenv pyenv-virtualenvwrapper ranger reattach-to-user-namespace rg tmux tmuxinator wget xz zsh zsh-completions
 ```
 
 - Install oh-my-zsh
@@ -53,23 +53,16 @@ rm -f ~/.zshrc
 $HOME/dotfiles/update.sh
 ```
 
-- Install the following Python versions: 2.7.17 and 3.8.6 from `pyenv`
+- Install the following Python versions: 2.7.17 and 3.10.8 from `pyenv`, and set default to 3.10.8
 ```bash
-pyenv install 2.7.17
-pyenv install 3.8.6
+pyenv install 2.7.18
+pyenv install 3.10.8
+pyenv global 3.10.8
 ```
 
-- Install latest Python 3.x version (3.10.7 at the moment of this writing) from `pyenv`
+- Install various python utilities using the default versions
 ```bash
-pyenv install 3.10.7
-```
-
-- Create a separate Python virtual environment just for `nvim` and install necessary packages
-```bash
-pyenv virtualenv 3.10.7 py3nvim
-pyenv activate py3nvim
-python3 -m pip install pynvim
-pyenv which python
+pip install -r requirements.txt
 ```
 
 - Patch a `lima` formula and install it along with `colima`
@@ -78,4 +71,10 @@ https://gist.github.com/thesharp/b3d6963da30d0e427b62002b08289b25
 brew edit lima
 brew install -s lima
 brew install colima
+```
+
+- Install various language servers
+```bash
+go install -v golang.org/x/tools/gopls@latest
+npm install -g pyright
 ```
