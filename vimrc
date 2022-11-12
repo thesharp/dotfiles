@@ -1,3 +1,8 @@
+lua <<EOF
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+EOF
+
 """ vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -12,14 +17,14 @@ else
 endif
 
 Plug 'junegunn/vim-plug'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-tree/nvim-tree.lua'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-signify'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
-Plug 'squarefrog/tomorrow-night.vim'
+Plug 'bradcush/base16-nvim'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-python/python-syntax'
 Plug 'rodjek/vim-puppet'
@@ -69,17 +74,51 @@ set backspace=indent,eol,start
 set modeline
 syntax on
 set ruler rulerformat=%40(%<%f\ %m%=%r\ %l\ %c\ %p%%%)
-set background=light
 set cursorline
 set regexpengine=1
 set lazyredraw
 set updatetime=100
 set noshowmode
 set clipboard=unnamed
-colorscheme tomorrow-night
+colorscheme base16-tomorrow-night
 highlight clear SpellBad
 highlight SpellBad ctermfg=009 ctermbg=011 guifg=#ff0000 guibg=#ffff00
 let mapleader="\<Space>"
+
+set autoindent
+set wildmenu
+set wcm=<Tab>
+menu Encoding.koi8-r :e ++enc=koi8-r<CR>
+menu Encoding.windows-1251 :e ++enc=cp1251<CR>
+menu Encoding.cp866 :e ++enc=cp866<CR>
+menu Encoding.utf-8 :e ++enc=utf8 <CR>
+map <F8> :emenu Encoding.<TAB>
+set hlsearch
+set incsearch
+set inccommand=nosplit
+set nobackup
+set title
+set showcmd
+set ttyfast
+set splitbelow
+set splitright
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set number
+set relativenumber
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+set spelllang=en_us,ru_ru
+set spellfile=$HOME/.vim/spell/ru.utf-8.add
+
+" tmux/non-tmux home/end hack
+let tmux=$TMUX
+if !has("nvim")
+    if tmux != ""
+        set term=screen-256color
+    else
+        set term=xterm-256color
+    endif
+endif
 
 """ Leader bindings
 nmap <silent> <Leader>o :only<CR>
@@ -89,12 +128,6 @@ nmap <silent> <Leader>j <C-w>j
 nmap <silent> <Leader>k <C-w>k
 nmap <silent> <Leader>l <C-w>l
 nmap <Leader>c :copen<CR>
-
-"" Signify
-nmap ]h <plug>(signify-next-hunk)
-nmap [h <plug>(signify-prev-hunk)
-nmap ]H 9999]h
-nmap [H 9999[h
 
 "" Fugitive
 nmap <silent> <leader>gs :Git<cr>
@@ -114,12 +147,18 @@ nmap <leader>] >>
 nmap <silent> <leader>f :Files<CR>
 nmap <silent> <leader>b :Buffers<CR>
 
-"" NERDTree
-nmap <silent> <leader>n :NERDTreeToggle<CR>
-nmap <silent> <Leader>F :NERDTreeFind<CR>
+"" nvim-tree
+nmap <silent> <leader>n :NvimTreeToggle<CR>
+nmap <silent> <Leader>F :NvimTreeFindFile<CR>
 
 "" ack / ag / rg
 nmap <leader>a :Ack!<Space>
+
+""" Signify
+nmap ]h <plug>(signify-next-hunk)
+nmap [h <plug>(signify-prev-hunk)
+nmap ]H 9999]h
+nmap [H 9999[h
 
 """ Remap arrows to quickfix-navigation
 nnoremap <silent> <Up> :cprevious<CR>
@@ -133,49 +172,8 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" tmux/non-tmux home/end hack
-let tmux=$TMUX
-if !has("nvim")
-    if tmux != ""
-        set term=screen-256color
-    else
-        set term=xterm-256color
-    endif
-endif
-
-set autoindent
-set wildmenu
-set wcm=<Tab>
-menu Encoding.koi8-r :e ++enc=koi8-r<CR>
-menu Encoding.windows-1251 :e ++enc=cp1251<CR>
-menu Encoding.cp866 :e ++enc=cp866<CR>
-menu Encoding.utf-8 :e ++enc=utf8 <CR>
-map <F8> :emenu Encoding.<TAB>
-set hlsearch
-set incsearch
-set inccommand=nosplit
-set nobackup
-set title
-set showcmd
-set ttyfast
-set splitbelow
-set splitright
-
 " clear highlighted search
 noremap <silent> <Leader>s :let @/=""<cr>
-
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-
-""" Line numbers settings
-map <F5> :set nonumber!<CR>:set foldcolumn=0<CR>
-set number
-set relativenumber
-highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
-
-""" Spelling
-set spelllang=en_us,ru_ru
-set spellfile=$HOME/.vim/spell/ru.utf-8.add
 
 """ Airline
 set laststatus=2
@@ -260,20 +258,11 @@ au FileType groovy setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 au FileType tex setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 " let g:vimtex_fold_enabled = 1
 
-""" GVIM settings
-if has("gui_running")
-    set guifont=set guifont=Monaco\ for\ Powerline:h12
-"    autocmd VimEnter * NERDTree
-endif
-
-""" NERDtree
-" let g:NERDTreeWinPos = "right"
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | wincmd p | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-let NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '^\.git$', '^\.gitmodules$']
-let NERDTreeShowHidden = 1
-let NERDTreeMinimalUI = 0
+""" nvim-tree
+lua <<EOF
+require("nvim-tree").setup()
+vim.opt.termguicolors = true
+EOF
 
 " ALE
 let g:ale_linters = {'tex': ['chktex'], 'python': ['flake8'], 'puppet': ['puppetlint'], 'ansible': ['ansible_lint'], 'yaml': ['pyyaml'], 'go': ['golangci-lint']}

@@ -1,5 +1,6 @@
 {
     "diagnostic.displayByAle": true,
+    "suggest.autoTrigger": "none",
     "languageserver": {
        "golang": {
          "command": "gopls",
