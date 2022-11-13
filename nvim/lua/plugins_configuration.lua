@@ -87,6 +87,7 @@ require('gitsigns').setup {
 require('lint').linters_by_ft = {
   go = {'golangcilint'},
   tex = {'chktex'},
+  ansible = {'ansible_lint'},
 }
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   callback = function()
