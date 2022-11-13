@@ -57,7 +57,7 @@ map("n", "<C-l>", "<C-w>l", {noremap = true})
 map("n", "<Leader>s", ":let @/=\"\"<CR>", {silent = true, noremap = true})
 
 -- LSP mappings
-local bufopts = { noremap=true, silent=true, buffer=bufnr }
+local bufopts = {noremap=true, silent=true}
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
