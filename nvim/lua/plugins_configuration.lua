@@ -18,7 +18,7 @@ require("nvim-autopairs").setup()
 require("lualine").setup{
   extensions = { "quickfix", "fugitive", "nvim-tree" },
   sections = {
-    lualine_a = {
+    lualine_c = {
       {
         'filename',
         file_status = true,      -- Displays file status (readonly status, modified status)
