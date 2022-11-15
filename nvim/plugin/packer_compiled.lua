@@ -219,6 +219,11 @@ _G.packer_plugins = {
     path = "/Users/sharp/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vim-haproxy"] = {
+    loaded = true,
+    path = "/Users/sharp/.local/share/nvim/site/pack/packer/start/vim-haproxy",
+    url = "https://github.com/Joorem/vim-haproxy"
+  },
   ["vim-obsession"] = {
     loaded = true,
     path = "/Users/sharp/.local/share/nvim/site/pack/packer/start/vim-obsession",

@@ -48,6 +48,7 @@ return require("packer").startup(function(use)
   use 'rodjek/vim-puppet'
   use 'bracki/vim-prometheus'
   use 'martinda/Jenkinsfile-vim-syntax'
+  use 'Joorem/vim-haproxy'
 
   use 'neovim/nvim-lspconfig'
   use 'williamboman/mason.nvim'
