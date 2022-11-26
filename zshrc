@@ -57,15 +57,15 @@ if [[ `uname` == "Darwin" ]] ; then
 	alias vim="nvim"
 	alias ag="rg"
 
-	export PATH=/usr/local/sbin:/usr/local/bin:$HOME/dotfiles/bin:/usr/local/share/npm/bin:$HOME/.rvm/bin:$PATH
+	export PATH=/opt/homebrew/sbin:/opt/homebrew/bin:$HOME/dotfiles/bin:/opt/homebrew/share/npm/bin:$HOME/.rvm/bin:$PATH
 	export PYENV_ROOT="$HOME/.pyenv"
 	export PATH="$PYENV_ROOT/shims:$PATH"
 	export GOPATH=$HOME/Projects/go
 	export PATH=$PATH:$GOPATH/bin
 
 	# homebrew
-	if [ -d /usr/local/share/zsh-completions ] ; then
-		fpath=(/usr/local/share/zsh-completions $fpath)
+	if [ -d /opt/homebrew/share/zsh-completions ] ; then
+		fpath=(/opt/homebrew/share/zsh-completions $fpath)
 	fi
 	export HOMEBREW_NO_AUTO_UPDATE=1
 
@@ -95,6 +95,6 @@ export LC_ALL=en_US.UTF-8
 plugins=(git brew fabric forklift github pip pyenv python sudo virtualenvwrapper)
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/mc mc
+complete -o nospace -C /opt/homebrew/bin/mc mc
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
