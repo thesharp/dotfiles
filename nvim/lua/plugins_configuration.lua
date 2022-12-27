@@ -89,6 +89,7 @@ require('lint').linters_by_ft = {
   go = {'golangcilint'},
   tex = {'chktex'},
   ansible = {'ansible_lint'},
+  sh = {'shellcheck'},
 }
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   callback = function()
@@ -99,7 +100,7 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 
 require('nvim-treesitter.configs').setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "lua", "go", "gomod", "markdown", "latex" },
+  ensure_installed = { "lua", "go", "gomod", "markdown", "latex", "bash" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,

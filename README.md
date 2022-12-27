@@ -30,7 +30,7 @@ https://disk.yandex.ru/d/TtINxbTEEznZ4g
 
 - Install necessary packages
 ```bash
-brew install aria2 docker docker-buildx docker-compose fd fzf git gnu-sed gnupg go hub jq neovim node pip-completion pyenv pyenv-virtualenv pyenv-virtualenvwrapper ranger reattach-to-user-namespace rg tmux tmuxinator wget xz zsh zsh-completions
+brew install aria2 docker docker-buildx docker-compose fd fzf git gnu-sed gnupg go hub jq lua-language-server neovim node pip-completion pyenv pyenv-virtualenv pyenv-virtualenvwrapper ranger reattach-to-user-namespace rg shellcheck tmux tmuxinator wget xz zsh zsh-completions
 ```
 
 - Install oh-my-zsh
@@ -76,5 +76,5 @@ brew install colima
 - Install various language servers
 ```bash
 go install -v golang.org/x/tools/gopls@latest
-npm install -g pyright
+npm install -g pyright bash-language-server
 ```
