@@ -100,7 +100,7 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 
 require('nvim-treesitter.configs').setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "lua", "go", "gomod", "markdown", "latex", "bash" },
+  ensure_installed = { "lua", "go", "gomod", "markdown", "latex", "bash", "terraform" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,

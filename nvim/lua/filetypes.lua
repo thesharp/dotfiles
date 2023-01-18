@@ -61,3 +61,6 @@ vim.cmd("au FileType groovy setlocal tabstop=8 expandtab shiftwidth=4 softtabsto
 
 --- LaTeX
 vim.cmd("au FileType tex setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2")
+
+--- Terraform
+vim.cmd("au FileType terraform setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2")

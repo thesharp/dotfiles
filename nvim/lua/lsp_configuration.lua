@@ -138,3 +138,6 @@ require('lspconfig')['sumneko_lua'].setup {
 }
 
 require('lspconfig')['bashls'].setup{}
+
+require('lspconfig')['terraformls'].setup{}
+require('lspconfig')['tflint'].setup{}
