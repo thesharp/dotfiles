@@ -78,6 +78,11 @@ fi
 
 alias scp="noglob scp"
 alias clickhouse-client="docker run -it clickhouse/clickhouse-server:22.3.7.28 clickhouse-client"
+alias kg="kubectl get"
+alias kd="kubectl describe"
+alias ka="kubectl apply"
+alias kc="kubectx"
+alias kn="kubens"
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
