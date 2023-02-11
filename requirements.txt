@@ -10,7 +10,7 @@ executing==1.2.0
 filelock==3.8.2
 flake8==6.0.0
 idna==3.4
-ipython==8.7.0
+ipython==8.10.0
 jedi==0.18.2
 matplotlib-inline==0.1.6
 mccabe==0.7.0
