@@ -25,7 +25,7 @@ ptyprocess==0.7.0
 pure-eval==0.2.2
 pycodestyle==2.10.0
 pyflakes==3.0.1
-Pygments==2.13.0
+Pygments==2.15.0
 python-lsp-jsonrpc==1.0.0
 python-lsp-server==1.6.0
 requests==2.31.0
