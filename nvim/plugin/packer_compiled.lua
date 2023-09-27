@@ -89,11 +89,6 @@ _G.packer_plugins = {
     path = "/Users/sharp/.local/share/nvim/site/pack/packer/start/ansible-vim",
     url = "https://github.com/pearofducks/ansible-vim"
   },
-  ["base16-nvim"] = {
-    loaded = true,
-    path = "/Users/sharp/.local/share/nvim/site/pack/packer/start/base16-nvim",
-    url = "https://github.com/bradcush/base16-nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/sharp/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -178,6 +173,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sharp/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
+  ["onedarkpro.nvim"] = {
+    loaded = true,
+    path = "/Users/sharp/.local/share/nvim/site/pack/packer/start/onedarkpro.nvim",
+    url = "https://github.com/olimorris/onedarkpro.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,

@@ -1,5 +1,11 @@
 -- Plugin configurations
 
+require('onedarkpro').setup{
+  options = {
+    cursorline = true,
+  }
+}
+
 require("telescope").setup{
   defaults = {
     mappings = {

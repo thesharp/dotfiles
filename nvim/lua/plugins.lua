@@ -13,7 +13,8 @@ return require("packer").startup(function(use)
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-tree/nvim-tree.lua'
 
-  use 'bradcush/base16-nvim'
+  use 'olimorris/onedarkpro.nvim'
+  -- use 'bradcush/base16-nvim'
   -- use 'RRethy/nvim-base16'
 
   use {

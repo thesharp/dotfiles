@@ -19,7 +19,7 @@ vim.opt.updatetime = 100
 vim.opt.showmode = false
 vim.opt.clipboard = "unnamed"
 vim.opt.mouse = "c"
-vim.cmd("colorscheme base16-tomorrow-night")
+vim.cmd("colorscheme onedark")
 vim.cmd("highlight clear SpellBad")
 vim.cmd("highlight SpellBad ctermfg=009 ctermbg=011 guifg=#ff0000 guibg=#ffff00")
 
