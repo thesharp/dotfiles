@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/Users/sharp/.local/share/nvim/site/pack/packer/start/formatter.nvim",
     url = "https://github.com/mhartington/formatter.nvim"
   },
+  ["github-actions-yaml.vim"] = {
+    loaded = true,
+    path = "/Users/sharp/.local/share/nvim/site/pack/packer/start/github-actions-yaml.vim",
+    url = "https://github.com/yasuhiroki/github-actions-yaml.vim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/sharp/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",

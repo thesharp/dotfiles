@@ -51,6 +51,7 @@ return require("packer").startup(function(use)
   use 'martinda/Jenkinsfile-vim-syntax'
   use 'Joorem/vim-haproxy'
   use 'hashivim/vim-terraform'
+  use 'yasuhiroki/github-actions-yaml.vim'
 
   use 'neovim/nvim-lspconfig'
   use 'williamboman/mason.nvim'
