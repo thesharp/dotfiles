@@ -28,10 +28,10 @@ require("nvim-tree").setup()
 require("nvim-autopairs").setup()
 
 require("lualine").setup{
-  extensions = { "quickfix", "fugitive", "nvim-tree" },
   options = {
     theme = "onedark"
   },
+  extensions = { "quickfix", "fugitive", "nvim-tree", "trouble" },
   sections = {
     lualine_c = {
       {
