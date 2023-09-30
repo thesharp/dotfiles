@@ -19,6 +19,18 @@ require("telescope").setup{
         ["<C-j>"] = "move_selection_next",
         ["<C-u>"] = false
       }
+    },
+  },
+  pickers = {
+    find_files = {
+      find_command = {
+        "rg",
+        "--files",
+        "--hidden",
+        "--glob=!**/.git/*",
+        "--glob=!**/.idea/*",
+        "--glob=!**/.vscode/*",
+      }
     }
   }
 }
