@@ -14,6 +14,7 @@ return require("packer").startup(function(use)
   use 'nvim-tree/nvim-tree.lua'
 
   use 'navarasu/onedark.nvim'
+  use 'olimorris/onedarkpro.nvim'
 
   use {
     'nvim-telescope/telescope.nvim',
