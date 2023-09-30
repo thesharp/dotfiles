@@ -11,7 +11,7 @@ vim.cmd("autocmd FileType markdown setlocal spell")
 vim.g.vim_markdown_folding_disabled = 1
 
 --- gitcommit
-vim.cmd("autocmd FileType gitcommit setlocal spell")
+vim.cmd("autocmd FileType NeogitCommitMessage setlocal spell")
 
 --- mail
 vim.cmd("autocmd FileType mail setlocal spell")
