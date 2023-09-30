@@ -21,7 +21,14 @@ return require("packer").startup(function(use)
     requires = { 'nvim-lua/plenary.nvim' }
   }
 
-  use 'tpope/vim-fugitive'
+  use {
+    'NeogitOrg/neogit',
+    requires = { 'nvim-lua/plenary.nvim',
+                 'nvim-telescope/telescope.nvim',
+                  'sindrets/diffview.nvim',
+                },
+  }
+
   use 'tpope/vim-obsession'
   use 'tpope/vim-unimpaired'
   use 'tpope/vim-rhubarb'

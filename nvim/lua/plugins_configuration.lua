@@ -4,6 +4,10 @@ require('onedark').setup {
     style = 'darker'
 }
 require('onedark').load()
+
+require("neogit").setup{
+  commit_editor = {
+    kind = "tab"
   }
 }
 

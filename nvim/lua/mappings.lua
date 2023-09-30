@@ -13,10 +13,10 @@ map("n", "<Leader>l", "<C-W>l", {silent = true})
 map("n", "<Leader>c", ":copen<CR>", {silent = true})
 map("n", "<Leader>t", ":TroubleToggle<CR>", {silent = true})
 
--- Fugitive
-map("n", "<Leader>gs", ":Git<CR>", {silent = true})
-map("n", "<Leader>gd", ":Gdiff<CR>", {silent = true})
-map("n", "<Leader>gl", ":Glog -- %<CR><CR>:copen<CR>", {silent = true})
+-- Neogit / Diffview
+map("n", "<Leader>gs", ":Neogit<CR>", {silent = true})
+map("n", "<Leader>gd", ":DiffviewOpen<CR>", {silent = true})
+map("n", "<Leader>gl", ":DiffviewFileHistory %<CR>", {silent = true})
 
 -- Textmate style indentation
 map("v", "<Leader>[", "<gv", {silent = true})
