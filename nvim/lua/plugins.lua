@@ -58,6 +58,17 @@ return require("packer").startup(function(use)
   use 'Joorem/vim-haproxy'
   use 'hashivim/vim-terraform'
   use 'yasuhiroki/github-actions-yaml.vim'
+  use {
+    'someone-stole-my-name/yaml-companion.nvim',
+    requires = {
+      { "neovim/nvim-lspconfig" },
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-telescope/telescope.nvim" },
+    },
+    config = function()
+      require("telescope").load_extension("yaml_schema")
+    end,
+  }
 
   use 'neovim/nvim-lspconfig'
   use 'williamboman/mason.nvim'
