@@ -1,8 +1,9 @@
 -- Plugin configurations
 
-require('onedarkpro').setup{
-  options = {
-    cursorline = true,
+require('onedark').setup {
+    style = 'darker'
+}
+require('onedark').load()
   }
 }
 
@@ -24,6 +25,9 @@ require("nvim-autopairs").setup()
 
 require("lualine").setup{
   extensions = { "quickfix", "fugitive", "nvim-tree" },
+  options = {
+    theme = "onedark"
+  },
   sections = {
     lualine_c = {
       {
