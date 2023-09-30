@@ -5,6 +5,7 @@ vim.g.mapleader = " "
 
 map("n", "<Leader>o", ":only<CR>", {silent = true})
 map("n", "<Leader>q", ":bd<CR>", {silent = true})
+map("n", "<Leader>Q", ":tabclose<CR>", {silent = true})
 map("n", "<Leader>h", "<C-W>h", {silent = true})
 map("n", "<Leader>j", "<C-W>j", {silent = true})
 map("n", "<Leader>k", "<C-W>k", {silent = true})
