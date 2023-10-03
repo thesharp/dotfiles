@@ -34,7 +34,7 @@ stack-data==0.6.2
 stevedore==4.1.1
 traitlets==5.7.0
 ujson==5.6.0
-urllib3==1.26.13
+urllib3==1.26.17
 virtualenv==20.17.1
 virtualenv-clone==0.5.7
 virtualenvwrapper==4.8.4
