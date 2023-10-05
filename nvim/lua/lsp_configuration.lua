@@ -141,3 +141,5 @@ require('lspconfig')['bashls'].setup{}
 
 require('lspconfig')['terraformls'].setup{}
 require('lspconfig')['tflint'].setup{}
+
+require('lspconfig')['dockerls'].setup{}
