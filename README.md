@@ -1,9 +1,5 @@
 # dotfiles
 
-## Current status
-
-Currently the WSL branch is out of sync, because I don't work on Windows PCs at this very moment, but the master branch is up to date with MacOS.
-
 ## License
 
 All this stuff here is licensed under the [MIT license](LICENSE).
@@ -12,10 +8,9 @@ All this stuff here is licensed under the [MIT license](LICENSE).
 
 - Install `Xcode` from the AppStore
 
-- Install a patched `powerline` Monaco font
+- Install a JetBrainsMono Nerd font
 ```bash
-https://disk.yandex.ru/d/PFmmqHUo8cKt5g
-https://disk.yandex.ru/d/H2eZvtdFVdUhYg -- JetBrains Light Nerd Font Complete
+https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip
 ```
 
 - Apply an iTerm2 profile
@@ -53,11 +48,9 @@ rm -f ~/.zshrc
 $HOME/dotfiles/update.sh
 ```
 
-- Install the following Python versions: 2.7.17 and 3.10.8 from `pyenv`, and set default to 3.10.8
+- Install the latest Python version from `pyenv`
 ```bash
-pyenv install 2.7.18
-pyenv install 3.10.8
-pyenv global 3.10.8
+pyenv install 3.12.0
 ```
 
 - Install various python utilities using the default versions
@@ -76,5 +69,5 @@ brew install colima
 - Install various language servers
 ```bash
 go install -v golang.org/x/tools/gopls@latest
-npm install -g pyright bash-language-server
+npm install -g pyright bash-language-server dockerfile-language-server-nodejs
 ```
