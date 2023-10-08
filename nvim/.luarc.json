@@ -3,5 +3,37 @@
     "Lua.workspace.checkThirdParty": false,
     "Lua.workspace.ignoreDir": [
         "packer_compiled.lua"
+    ],
+    "workspace.library": [
+        "/Users/sharp/.local/share/nvim/lazy/neodev.nvim/types/stable",
+        "/opt/homebrew/Cellar/neovim/0.9.1/share/nvim/runtime/lua",
+        "/Users/sharp/.local/share/nvim/lazy/nvim-treesitter/lua",
+        "/Users/sharp/.local/share/nvim/lazy/gitsigns.nvim/lua",
+        "/Users/sharp/.local/share/nvim/lazy/yaml-companion.nvim/lua",
+        "/Users/sharp/.local/share/nvim/lazy/nvim-lspconfig/lua",
+        "/Users/sharp/.local/share/nvim/lazy/onedarkpro.nvim/lua",
+        "/Users/sharp/.local/share/nvim/lazy/trouble.nvim/lua",
+        "/Users/sharp/.local/share/nvim/lazy/plenary.nvim/lua",
+        "/Users/sharp/.local/share/nvim/lazy/onedark.nvim/lua",
+        "/Users/sharp/.local/share/nvim/lazy/formatter.nvim/lua",
+        "/Users/sharp/.local/share/nvim/lazy/telescope.nvim/lua",
+        "/Users/sharp/.local/share/nvim/lazy/lualine.nvim/lua",
+        "/Users/sharp/.local/share/nvim/lazy/cmp-nvim-lsp/lua",
+        "/Users/sharp/.local/share/nvim/lazy/cmp-buffer/lua",
+        "/Users/sharp/.local/share/nvim/lazy/neogit/lua",
+        "/Users/sharp/.local/share/nvim/lazy/mason.nvim/lua",
+        "/Users/sharp/.local/share/nvim/lazy/cmp-path/lua",
+        "/Users/sharp/.local/share/nvim/lazy/nvim-autopairs/lua",
+        "/Users/sharp/.local/share/nvim/lazy/lazy.nvim/lua",
+        "/Users/sharp/.local/share/nvim/lazy/nvim-tree.lua/lua",
+        "/Users/sharp/.local/share/nvim/lazy/nvim-web-devicons/lua",
+        "/Users/sharp/.local/share/nvim/lazy/cmp-vsnip/lua",
+        "/Users/sharp/.local/share/nvim/lazy/nvim-cmp/lua",
+        "/Users/sharp/.local/share/nvim/lazy/nvim-lint/lua",
+        "/Users/sharp/.local/share/nvim/lazy/cmp-tmux/lua",
+        "/Users/sharp/.local/share/nvim/lazy/cmp-nvim-lsp-signature-help/lua",
+        "/Users/sharp/.local/share/nvim/lazy/neodev.nvim/lua",
+        "/Users/sharp/.local/share/nvim/lazy/diffview.nvim/lua",
+        "/Users/sharp/dotfiles/nvim/lua"
     ]
 }

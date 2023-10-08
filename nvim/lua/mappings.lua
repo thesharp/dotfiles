@@ -1,7 +1,6 @@
 local map = vim.api.nvim_set_keymap
 
 map("n", "<Space>", "", {silent = true})
-vim.g.mapleader = " "
 
 map("n", "<Leader>o", ":only<CR>", {silent = true})
 map("n", "<Leader>q", ":bd<CR>", {silent = true})

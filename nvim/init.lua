@@ -2,11 +2,24 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.ackprg = "rg --vimgrep"
 
-require("plugins")
-require("plugins_configuration")
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+vim.g.mapleader = " "
+
+require('lazy').setup('plugins')
 require("mappings")
 require("filetypes")
-require("lsp_configuration")
 
 -- General stuff
 vim.opt.autoread = true
@@ -39,4 +52,4 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 -- vim.cmd("highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE")
 vim.opt.spelllang = "en_us,ru_ru"
-vim.opt.spellfile = "$HOME/.vim/spell/ru.utf-8.add"
+vim.opt.spellfile = "$HOME/.config/nvim/spell/ru.utf-8.add"
