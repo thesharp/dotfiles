@@ -1,5 +1,6 @@
 # oh-my-zsh thesharp theme
 # based on "bureau"
+# vi: ft=zsh tabstop=4 expandtab shiftwidth=2 softtabstop=2
 
 ### Git [±master ▾●]
 
@@ -81,7 +82,7 @@ if [[ $EUID -eq 0 ]]; then
   _LIBERTY="%{$fg[red]%}#"
 else
   _USERNAME="%{$fg_bold[white]%}%n"
-  _LIBERTY="%{$fg[green]%}$"
+  _LIBERTY="%{$fg[cyan]%}$"
 fi
 _USERNAME="$_USERNAME%{$reset_color%}@%m"
 _LIBERTY="$_LIBERTY%{$reset_color%}"
@@ -148,4 +149,3 @@ function _clear_screen() {
 
 zmodload zsh/zle
 zle -N clear-screen _clear_screen
-
