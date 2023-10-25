@@ -44,6 +44,12 @@ HIST_STAMPS="yyyy-mm-dd"
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=~/dotfiles/zsh
 
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(sudo colored-man-pages)
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -92,12 +98,6 @@ export HISTCONTROL=ignoredups
 export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew fabric forklift github pip pyenv python sudo virtualenvwrapper)
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/mc mc
