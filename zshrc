@@ -83,7 +83,7 @@ if [[ `uname` == "Darwin" ]] ; then
 fi
 
 alias scp="noglob scp"
-alias clickhouse-client="docker run -it clickhouse/clickhouse-server:22.3.7.28 clickhouse-client"
+alias clickhouse-client="docker run -it clickhouse/clickhouse-server:23.8.4 clickhouse-client"
 alias kg="kubectl get"
 alias kd="kubectl describe"
 alias ka="kubectl apply"
