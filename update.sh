@@ -59,7 +59,6 @@ dotfile gitconfig
 dotfile zshrc
 dotfile tmux.conf
 dotfile latexmkrc
-dotdir vim
 dotdir tmux
 dotdir zsh
 dotconfigdir ranger
