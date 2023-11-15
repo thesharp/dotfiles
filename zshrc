@@ -106,3 +106,11 @@ complete -o nospace -C /opt/homebrew/bin/mc mc
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
+enq() {
+	echo -n "$1" | base64
+}
+
+dnq() {
+	echo -n "$1" | base64 --decode
+}
