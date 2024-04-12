@@ -9,7 +9,7 @@ docstring-to-markdown==0.12
 executing==2.0.0
 filelock==3.12.4
 flake8==6.1.0
-idna==3.4
+idna==3.7
 ipython==8.16.1
 jedi==0.19.1
 matplotlib-inline==0.1.6
