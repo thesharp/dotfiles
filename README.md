@@ -69,5 +69,5 @@ brew install colima
 - Install various language servers
 ```bash
 go install -v golang.org/x/tools/gopls@latest
-npm install -g pyright bash-language-server dockerfile-language-server-nodejs
+npm install -g pyright bash-language-server dockerfile-language-server-nodejs @ansible/ansible-language-server
 ```

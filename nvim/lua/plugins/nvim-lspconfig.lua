@@ -177,5 +177,6 @@ return {
     require('lspconfig')['tflint'].setup{}
 
     require('lspconfig')['dockerls'].setup{}
+    require('lspconfig')['ansiblels'].setup{}
       end
 }
