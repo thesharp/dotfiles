@@ -47,6 +47,9 @@ return {
               schemaDownload = { enable = true },
               schemas = {},
               trace = { server = "debug" },
+              customTags = {
+                "!vault",
+              }
             },
           },
         },})
