@@ -178,5 +178,15 @@ return {
 
     require('lspconfig')['dockerls'].setup{}
     require('lspconfig')['ansiblels'].setup{}
+
+    require('lspconfig')['helm_ls'].setup{
+      settings = {
+        ['helm-ls'] = {
+          yamlls = {
+            path = "yaml-language-server",
+          }
+        }
+      }
+    }
       end
 }

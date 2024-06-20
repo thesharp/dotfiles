@@ -34,6 +34,8 @@
         "/Users/sharp/.local/share/nvim/lazy/cmp-nvim-lsp-signature-help/lua",
         "/Users/sharp/.local/share/nvim/lazy/neodev.nvim/lua",
         "/Users/sharp/.local/share/nvim/lazy/diffview.nvim/lua",
-        "/Users/sharp/dotfiles/nvim/lua"
+        "/Users/sharp/dotfiles/nvim/lua",
+        "${3rd}/luassert/library",
+        "${3rd}/luv/library"
     ]
 }

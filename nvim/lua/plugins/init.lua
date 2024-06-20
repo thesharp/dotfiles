@@ -19,5 +19,6 @@ return {
     'Joorem/vim-haproxy',
     'hashivim/vim-terraform',
     'yasuhiroki/github-actions-yaml.vim',
+    'towolf/vim-helm',
   }
 }

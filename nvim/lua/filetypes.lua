@@ -32,6 +32,7 @@ vim.g.ansible_extra_keywords_highlight = 1
 
 --- YAML
 vim.cmd("au FileType yaml setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2")
+vim.cmd("au FileType helm setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2")
 
 --- LUA
 vim.cmd("au FileType lua setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2")

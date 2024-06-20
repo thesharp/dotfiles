@@ -19,6 +19,7 @@ return {
           ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
           ["http://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
           ["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
+          ["https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/main/_definitions.json"] = "flux-*.{yml,yaml}",
         },
 
         -- Additional schemas available in Telescope picker

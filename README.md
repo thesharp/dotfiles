@@ -25,7 +25,7 @@ https://disk.yandex.ru/d/TtINxbTEEznZ4g
 
 - Install necessary packages
 ```bash
-brew install aria2 docker docker-buildx docker-compose fd fzf git gnu-sed gnupg go hub jq lua-language-server neovim node pip-completion pyenv pyenv-virtualenv pyenv-virtualenvwrapper ranger reattach-to-user-namespace rg shellcheck tmux tmuxinator wget xz yaml-language-server zsh zsh-completions zsh-fast-syntax-highlighting
+brew install aria2 docker docker-buildx docker-compose fd fzf git gnu-sed gnupg go helm-ls hub jq lua-language-server neovim node pip-completion pyenv pyenv-virtualenv pyenv-virtualenvwrapper ranger reattach-to-user-namespace rg shellcheck tmux tmuxinator wget xz yaml-language-server zsh zsh-completions zsh-fast-syntax-highlighting
 ```
 
 - Install oh-my-zsh

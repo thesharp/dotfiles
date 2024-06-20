@@ -36,6 +36,7 @@
   "vim-eunuch": { "branch": "master", "commit": "67f3dd32b4dcd1c427085f42ff5f29c7adc645c6" },
   "vim-fugitive": { "branch": "master", "commit": "46eaf8918b347906789df296143117774e827616" },
   "vim-haproxy": { "branch": "master", "commit": "1d93a843b4c567c2f499ba0c7ed60c435109ee53" },
+  "vim-helm": { "branch": "master", "commit": "ae1ebc160d2b9b90108477ab10df7a4fc501e358" },
   "vim-obsession": { "branch": "master", "commit": "fe9d3e1a9a50171e7d316a52e1e56d868e4c1fe5" },
   "vim-prometheus": { "branch": "master", "commit": "b7b55edc5ecd0d517e5ee12fb14dd4a55d6b9524" },
   "vim-puppet": { "branch": "master", "commit": "81943d532dee24f8518f855dfb17160809abfdfb" },
