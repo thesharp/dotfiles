@@ -8,7 +8,7 @@ return {
     ---@diagnostic disable-next-line: missing-fields
     require('nvim-treesitter.configs').setup {
       -- A list of parser names, or "all"
-      ensure_installed = { "lua", "go", "gomod", "markdown", "latex", "bash", "terraform", "yaml", "jsonc", "python" },
+      ensure_installed = { "lua", "go", "gomod", "markdown", "markdown_inline", "latex", "bash", "terraform", "yaml", "jsonc", "python" },
 
       -- Install parsers synchronously (only applied to `ensure_installed`)
       sync_install = false,
