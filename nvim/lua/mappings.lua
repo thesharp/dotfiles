@@ -10,7 +10,7 @@ map("n", "<Leader>j", "<C-W>j", {silent = true})
 map("n", "<Leader>k", "<C-W>k", {silent = true})
 map("n", "<Leader>l", "<C-W>l", {silent = true})
 map("n", "<Leader>c", ":copen<CR>", {silent = true})
-map("n", "<Leader>t", ":TroubleToggle<CR>", {silent = true})
+map("n", "<Leader>t", ":Trouble diagnostics toggle<CR>", {silent = true})
 
 -- Neogit / Diffview
 map("n", "<Leader>gs", ":Neogit<CR>", {silent = true})
