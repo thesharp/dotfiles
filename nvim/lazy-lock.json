@@ -16,7 +16,7 @@
   "lualine.nvim": { "branch": "master", "commit": "b431d228b7bbcdaea818bdc3e25b8cdbe861f056" },
   "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },
   "neodev.nvim": { "branch": "main", "commit": "46aa467dca16cf3dfe27098042402066d2ae242d" },
-  "neogit": { "branch": "master", "commit": "d0e87541130b2cf62d7f8a54487ef99560232fb6" },
+  "neogit": { "branch": "master", "commit": "76bc6bbf3baaed652f9e72507bc948f26d6407b8" },
   "nvim-autopairs": { "branch": "master", "commit": "fd2badc24e675f947162a16c124d395bde80dbd6" },
   "nvim-cmp": { "branch": "main", "commit": "ae644feb7b67bf1ce4260c231d1d4300b19c6f30" },
   "nvim-lint": { "branch": "master", "commit": "99cab0b885aaa2f59736c047d23e9a7835d4f9a9" },
