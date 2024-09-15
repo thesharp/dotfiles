@@ -28,6 +28,7 @@ vim.cmd("au FileType puppet setlocal tabstop=4 expandtab shiftwidth=2 softtabsto
 --- Ansible
 vim.cmd("au FileType ansible setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2")
 vim.cmd("au FileType yaml.ansible setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2")
+vim.cmd("au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible")
 vim.g.ansible_extra_keywords_highlight = 1
 
 --- YAML
