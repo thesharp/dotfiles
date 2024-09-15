@@ -15,6 +15,7 @@ map("n", "<Leader>t", ":TroubleToggle<CR>", {silent = true})
 -- Neogit / Diffview
 map("n", "<Leader>gs", ":Neogit<CR>", {silent = true})
 map("n", "<Leader>gd", ":DiffviewOpen<CR>", {silent = true})
+map("n", "<Leader>gm", ":DiffviewOpen master<CR>", {silent = true})
 map("n", "<Leader>gl", ":DiffviewFileHistory %<CR>", {silent = true})
 
 -- Textmate style indentation
