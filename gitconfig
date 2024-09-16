@@ -2,6 +2,9 @@
 	name = Ilya Otyutskiy
 	email = sharp@thesharp.org
 
+[includeIf "gitdir:~/Projects/ddl/"]
+	path = ~/.gitconfig-ddl
+
 [alias]
 	st = status
 	ci = commit -a
@@ -23,8 +26,10 @@
 
 [github]
 	user = thesharp
+
 [init]
 	defaultBranch = master
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
