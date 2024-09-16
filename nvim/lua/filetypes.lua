@@ -1,6 +1,7 @@
 --- Python
 vim.cmd("au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4")
 vim.cmd("au FileType python set colorcolumn=110")
+vim.cmd("au BufRead,BufNewFile requirements.txt set filetype=requirements")
 
 --- HTML
 vim.cmd("au FileType html setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2")
