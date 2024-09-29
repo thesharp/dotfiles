@@ -4,13 +4,18 @@ return {
   dependencies = {
     'nvim-lua/plenary.nvim',
   },
-  opts = {
+  config = function()
+    local open_with_trouble = require("trouble.sources.telescope").open
+    local telescope = require("telescope")
+
+    telescope.setup({
     defaults = {
       mappings = {
         i = {
           ["<C-k>"] = "move_selection_previous",
           ["<C-j>"] = "move_selection_next",
-          ["<C-u>"] = false
+          ["<C-u>"] = false,
+          ["<C-t>"] = open_with_trouble,
         }
       },
     },
@@ -26,5 +31,6 @@ return {
         }
       }
     }
-  }
+  })
+  end
 }
