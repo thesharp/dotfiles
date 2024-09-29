@@ -10,3 +10,4 @@ tmux/resurrect/*
 *.pyc
 vim/spell/ru.utf-8.add.spl
 Session.vim
+bin/gcloud
