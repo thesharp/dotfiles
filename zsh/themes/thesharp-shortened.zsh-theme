@@ -117,7 +117,7 @@ function username() {
 
 function virtualenv_info {
   if [[ -n "$VIRTUAL_ENV" ]]; then
-      echo " $FG[240][ %{$reset_color%}%{$fg_bold[white]%}\u2731%{$reset_color%} ${VIRTUAL_ENV:t}$FG[240] ]%{$reset_color%} "
+      echo " $FG[240][ %{$reset_color%}%{$fg_bold[white]%}\u2731%{$reset_color%} ${VIRTUAL_ENV:t}$FG[240] ]%{$reset_color%}"
   fi
 }
 
@@ -125,10 +125,36 @@ _1LEFT='$(ssh_connection)$(username)$_PATH$(bureau_git_prompt)$(virtualenv_info)
 # _1RIGHT="[%*] "
 
 bureau_precmd () {
+  if [ $cmd_start ]; then
+    local now=$(($(print -P %D{%s%6.}) / 1000))
+    local d_ms=$(($now - $cmd_start))
+    local d_s=$((d_ms / 1000))
+    local ms=$((d_ms % 1000))
+    local s=$((d_s % 60))
+    local m=$(((d_s / 60) % 60))
+    local h=$((d_s / 3600))
+
+    if   ((h > 0)); then cmd_time=${h}h${m}m
+    elif ((m > 0)); then cmd_time=${m}m${s}s
+    elif ((s > 9)); then cmd_time=${s}.$(printf %03d $ms | cut -c1-2)s # 12.34s
+    elif ((s > 0)); then cmd_time=${s}.$(printf %03d $ms)s # 1.234s
+    # else cmd_time=${ms}ms
+    else unset cmd_time
+    fi
+
+    unset cmd_start
+  else
+    # Clear previous result when hitting Return with no command to execute
+    unset cmd_time
+  fi
   # _1SPACES=`get_space $_1LEFT $_1RIGHT`
   # print
   # print -rP "$_1LEFT$_1SPACES$_1RIGHT"
-  print -rP "%(?..%{$fg[red]%})➤%{$reset_color%} $_1LEFT"
+  print -rP "%(?..%{$fg[red]%})➤%{$reset_color%} $_1LEFT $FG[240]${cmd_time}%{$reset_color%}"
+}
+
+preexec () {
+  cmd_start=$(print -P %D{%s%3.})
 }
 
 setopt prompt_subst
@@ -137,6 +163,7 @@ PROMPT="$_LIBERTY "
 
 autoload -U add-zsh-hook
 add-zsh-hook precmd bureau_precmd
+add-zsh-hook preexec preexec
 
 function _clear_screen() {
   # enable output to terminal
