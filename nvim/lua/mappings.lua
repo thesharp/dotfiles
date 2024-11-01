@@ -29,6 +29,16 @@ map("n", "<Leader>f", ":Telescope find_files<CR>", {silent = true})
 map("n", "<Leader>b", ":Telescope buffers<CR>", {silent = true})
 map("n", "<Leader>r", ":Telescope live_grep<CR>", {silent = true})
 
+function _G.live_grep_hidden()
+  local telescope = require("telescope.builtin")
+  telescope.live_grep({
+    no_ignore = true, -- Include ignored files
+    hidden = true, -- Optionally include hidden files
+  })
+end
+
+map("n", "<leader>R", ":lua live_grep_hidden()<CR>", {silent = true})
+
 -- nvim-tree
 map("n", "<Leader>n", ":NvimTreeToggle<CR>", {silent = true})
 map("n", "<Leader>F", ":NvimTreeFindFile<CR>", {silent = true})
