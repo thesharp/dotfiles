@@ -90,6 +90,7 @@ alias ka="kubectl apply"
 alias kc="kubectx"
 alias kn="kubens"
 alias weechat="docker run -it -e TZ=$(realpath /etc/localtime | rev | cut -d "/" -f1,2 | rev) -e UID=$(id -u) -e GID=$(id -g) -v $HOME/.config/weechat:/home/user/.config/weechat -v $HOME/Downloads/weechat:/downloads weechat/weechat:latest-alpine-slim"
+alias cmr="glab mr create -f -w"
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
