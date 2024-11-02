@@ -67,3 +67,6 @@ vim.cmd("au FileType tex setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2
 
 --- Terraform
 vim.cmd("au FileType terraform setlocal tabstop=4 expandtab shiftwidth=2 softtabstop=2")
+
+-- systemd units
+vim.cmd("au BufRead,BufNewFile *.service set filetype=systemd")
