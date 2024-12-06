@@ -17,6 +17,8 @@ map("n", "<Leader>gs", ":Neogit<CR>", {silent = true})
 map("n", "<Leader>gd", ":DiffviewOpen<CR>", {silent = true})
 map("n", "<Leader>gm", ":DiffviewOpen master<CR>", {silent = true})
 map("n", "<Leader>gl", ":DiffviewFileHistory %<CR>", {silent = true})
+map("v", "<Leader>gl", ":DiffviewFileHistory %<CR>", {silent = true})
+map("n", "<Leader>gb", ":Gitsigns blame<CR>", {silent = true})
 
 -- Textmate style indentation
 map("v", "<Leader>[", "<gv", {silent = true})

@@ -43,6 +43,15 @@ return {
 
         additional_vim_regex_highlighting = false,
       },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<leader>m", -- set to `false` to disable one of the mappings
+          node_incremental = "<leader>m",
+          scope_incremental = false,
+          node_decremental = false,
+        },
+      },
     }
   end
 }
