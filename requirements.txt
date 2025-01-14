@@ -36,7 +36,7 @@ stevedore==5.1.0
 traitlets==5.11.2
 ujson==5.8.0
 urllib3==2.2.2
-virtualenv==20.24.5
+virtualenv==20.26.6
 virtualenv-clone==0.5.7
 virtualenvwrapper==4.8.4
 wcwidth==0.2.8
