@@ -7,5 +7,6 @@ return {
   config = function ()
     require("nvim-tree").setup()
     vim.cmd("hi NvimTreeCursorLine guifg=#c678dd guibg=#2b3039")
+    vim.cmd("autocmd User NeogitStatusRefreshed :NvimTreeRefresh")
   end
 }

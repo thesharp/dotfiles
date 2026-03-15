@@ -118,7 +118,12 @@ return {
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
     require('lspconfig')['gopls'].setup {
-      capabilities = capabilities
+      capabilities = capabilities,
+      cmd = { "gopls", "--remote=auto" },
+      root_dir = function(fname) return require('lspconfig').util.root_pattern('go.mod', 'go.sum')(fname) or vim.fn.getcwd() end,
+      -- on_attach = function(client, bufnr)
+      --   require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+      -- end
     }
 
     require('lspconfig')['pylsp'].setup{
@@ -177,7 +182,11 @@ return {
     require('lspconfig')['tflint'].setup{}
 
     require('lspconfig')['dockerls'].setup{}
-    require('lspconfig')['ansiblels'].setup{}
+    require('lspconfig')['ansiblels'].setup{
+      on_attach = function(client, bufnr)
+        require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+      end
+    }
 
     require('lspconfig')['helm_ls'].setup{
       settings = {

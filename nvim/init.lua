@@ -52,6 +52,6 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 -- vim.cmd("highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE")
 vim.opt.spelllang = "en_us,ru_ru"
-vim.opt.spellfile = "$HOME/.config/nvim/spell/ru.utf-8.add"
+vim.opt.spellfile = "/Users/sharp/.config/nvim/spell/ru.utf-8.add"
 
-vim.cmd("set shortmess=I")
+vim.cmd("set shortmess=aoOtI")

@@ -19,5 +19,7 @@ return {
     'Joorem/vim-haproxy',
     'hashivim/vim-terraform',
     'yasuhiroki/github-actions-yaml.vim',
+
+    'artemave/workspace-diagnostics.nvim',
   }
 }
