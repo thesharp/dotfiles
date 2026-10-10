@@ -67,7 +67,7 @@ tiktoken==0.13.0
 tqdm==4.66.5
 traitlets==5.11.2
 ujson==5.13.0
-urllib3==2.7.0
+urllib3==2.8.0
 virtualenv==20.36.1
 virtualenv-clone==0.5.7
 virtualenvwrapper==4.8.4
