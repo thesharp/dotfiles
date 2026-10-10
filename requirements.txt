@@ -75,4 +75,4 @@ wcmatch==8.5.2
 wcwidth==0.2.8
 yamllint==1.35.1
 youtube-dl==2021.12.17
-zipp==3.18.2
+zipp==3.19.1
