@@ -62,6 +62,7 @@ if [[ `uname` == "Darwin" ]] ; then
 	alias git="hub"
 	alias vim="nvim"
 	alias ag="rg"
+	alias codex="$HOME/.codex/hooks/codex-peon/codex-peon.sh launch"
 
 	export PATH=/opt/homebrew/sbin:/opt/homebrew/bin:$HOME/dotfiles/bin:/opt/homebrew/share/npm/bin:$HOME/.rvm/bin:$PATH
 	export PYENV_ROOT="$HOME/.pyenv"
