@@ -116,3 +116,41 @@ enq() {
 dnq() {
 	echo -n "$1" | base64 --decode
 }
+
+envoy-logs() {
+  local view=compact
+
+  case "${1:-}" in
+    compact|detailed|errors|json)
+      view="$1"
+      shift
+      ;;
+  esac
+
+  stern \
+    -n envoy-gateway-system \
+    '.' \
+    -c '^envoy$' \
+    --only-log-lines \
+    -o raw \
+    "$@" |
+    jq -RrC --unbuffered --arg view "$view" '
+      fromjson?
+      | select(type == "object" and .response_code != null)
+      | . as $r
+      | ($r.response_code | tonumber) as $code
+      | select($view != "errors" or $code >= 400)
+      | (if $code >= 500 then "\u001b[1;31m"
+         elif $code >= 400 then "\u001b[31m"
+         elif $code >= 300 then "\u001b[33m"
+         else "\u001b[32m" end) as $color
+      | ($r[":authority"] // "-") as $host
+      | ($r["x-envoy-origin-path"] // "/") as $path
+      | if $view == "json" then $r
+        elif $view == "detailed" then
+          "\($r.start_time // "-") \($color)\($code)\u001b[0m \($r.method // "-") \($host)\($path) \($r.duration // "-")ms from=\($r["x-forwarded-for"] // $r.downstream_remote_address // "-") [\($r.response_code_details // "-")]"
+        else
+          "\($color)\($code)\u001b[0m \($r.method // "-") \($host)\($path) \($r.duration // "-")ms [\($r.response_code_details // "-")]"
+        end
+    '
+}
