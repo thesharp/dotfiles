@@ -69,6 +69,14 @@ if [[ `uname` == "Darwin" ]] ; then
 	export GOPATH=$HOME/Projects/go
 	export PATH=$PATH:$GOPATH/bin
 
+	# https://github.com/hvac/hvac/issues/1192#issuecomment-2394475346
+	export no_proxy="*"
+	# https://www.reddit.com/r/ansible/comments/1nx7zdd/ansiblepython_fork_issue_reoccurring_since_macos/
+	export OS_ACTIVITY_MODE=disable
+
+	export VAULT_SKIP_VERIFY=true
+	export VAULT_CLI_LOGIN_METHOD=token
+
 	# homebrew
 	if [ -d /opt/homebrew/share/zsh-completions ] ; then
 		fpath=(/opt/homebrew/share/zsh-completions $fpath)

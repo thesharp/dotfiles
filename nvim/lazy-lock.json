@@ -45,6 +45,7 @@
   "vim-rhubarb": { "branch": "master", "commit": "ee69335de176d9325267b0fd2597a22901d927b1" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "vim-terraform": { "branch": "master", "commit": "24de93afb05078bac6a2e966402cc1f672277708" },
+  "vim-terragrunt": { "branch": "master", "commit": "39b9cd1f87879790b53f2edc728b254c1e17a465" },
   "vim-unimpaired": { "branch": "master", "commit": "6d44a6dc2ec34607c41ec78acf81657248580bf1" },
   "vim-vsnip": { "branch": "master", "commit": "02a8e79295c9733434aab4e0e2b8c4b7cea9f3a9" },
   "vimtex": { "branch": "master", "commit": "0785fd98af20f308ce6856f75a70a4ece9abab29" },

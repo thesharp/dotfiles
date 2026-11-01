@@ -18,6 +18,7 @@ return {
     'martinda/Jenkinsfile-vim-syntax',
     'Joorem/vim-haproxy',
     'hashivim/vim-terraform',
+    'rhadley-recurly/vim-terragrunt',
     'yasuhiroki/github-actions-yaml.vim',
 
     'artemave/workspace-diagnostics.nvim',
