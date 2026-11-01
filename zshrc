@@ -80,6 +80,13 @@ if [[ `uname` == "Darwin" ]] ; then
 
 	# fzf / ag
 	export FZF_DEFAULT_COMMAND='rg --files --vimgrep'
+
+	# sops
+	export SOPS_AGE_KEY_FILE=$HOME/.config/sops/age/keys.txt
+	source <(sops completion zsh)
+
+	# argocd
+	source <(argocd completion zsh)
 fi
 
 alias scp="noglob scp"
