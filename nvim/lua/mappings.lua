@@ -30,6 +30,7 @@ map("n", "<Leader>]", ">>", {silent = true})
 map("n", "<Leader>f", ":Telescope find_files<CR>", {silent = true})
 map("n", "<Leader>b", ":Telescope buffers<CR>", {silent = true})
 map("n", "<Leader>r", ":Telescope live_grep<CR>", {silent = true})
+map("n", "<Leader>e", ":Telescope live_grep search_dirs=", {})
 
 function _G.live_grep_hidden()
   local telescope = require("telescope.builtin")
